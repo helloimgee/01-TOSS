@@ -1,17 +1,62 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import ErrorPage from "./ErrorPage";
+import CarrierPage from "./Routes/CarrierPage";
+import Home from "./Routes/Home";
+import Root from "./Routes/Root";
+import SupportFaqPage from "./Routes/SupportFaqPage";
+import SupportPage from "./Routes/SupportPage";
+import TeamPage from "./Routes/TeamPage";
+import TossCertPage from "./Routes/TossCertPage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/team",
+        element: <TeamPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/support",
+        element: <SupportPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/support/faq",
+        element: <SupportFaqPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/tosscert",
+        element: <TossCertPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/career",
+        element: <CarrierPage />,
+        errorElement: <ErrorPage />,
+      },
+    ],
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,0 +1,38 @@
+.service-wrap {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.service-list {
+  width: 350px;
+  margin: 0 200px 100px 0px;
+
+  .service-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 26px;
+    background-color: red;
+    margin-bottom: 30px;
+  }
+
+  .service-txt-wrap {
+    line-height: 1.8;
+
+    span {
+      display: block;
+      &:nth-child(1) {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      &:nth-child(2) {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #8b95a1;
+      }
+    }
+  }
+}
+
