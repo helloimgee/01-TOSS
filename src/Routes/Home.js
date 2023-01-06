@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Main03 from "../Components/Main03";
 import ServiceList from "../Components/ServiceList";
 import "./Home.scss";
 
@@ -49,6 +50,7 @@ export default function Home() {
           <ServiceList />
         </div>
       </section>
+      <Main03 />
     </div>
   );
 }

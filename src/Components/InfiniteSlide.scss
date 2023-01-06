@@ -1,0 +1,19 @@
+
+div.roller {
+  ul {
+    display: flex;
+  }
+}
+li.list {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-right: 10px;
+  // animation: InfiniteSlide 5s linear infinite;
+}
+
+// @keyframes InfiniteSlide {
+//   100% {
+//     transform: translateX(-200%);
+//   }
+// }

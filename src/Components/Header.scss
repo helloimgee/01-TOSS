@@ -42,9 +42,7 @@ header {
         margin-right: 5px;
       }
       a:nth-child(2)::before {
-        content: "";
-        width: 5px;
-        height: 55px;
+        content: "l";
         background-color: black;
       }
     }

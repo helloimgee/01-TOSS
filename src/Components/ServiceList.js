@@ -5,7 +5,7 @@ import serviceData from "../assets/serviceData";
 export default function ServiceList() {
   const serviceList = serviceData.map((list) => {
     return (
-      <li className="service-list">
+      <li className="service-list" key={list.id}>
         <div
           className="service-icon"
           style={{ backgroundColor: `${list.color}` }}
