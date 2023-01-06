@@ -32,6 +32,7 @@ export default function Header() {
           <Link to="/">
             <span>KOR</span>
           </Link>
+          <div className="line" />
           <Link to="/">
             <span>ENG</span>
           </Link>

@@ -1,19 +1,29 @@
-
 div.roller {
   ul {
     display: flex;
+    overflow: hidden;
   }
 }
 li.list {
+  flex-shrink: 0;
   width: 130px;
   height: 130px;
   border-radius: 50%;
   margin-right: 10px;
-  // animation: InfiniteSlide 5s linear infinite;
+  animation-name: InfiniteSlide;
+  // animation-iteration-count: infinite;
+  // animation-duration: 4s;
+  animation: InfiniteSlide 60s linear infinite;
 }
 
-// @keyframes InfiniteSlide {
-//   100% {
-//     transform: translateX(-200%);
-//   }
-// }
+@keyframes InfiniteSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-3350px + 100vw));
+  }
+  // 100% {
+  //   transform: translateX(-200%);
+  // }
+}

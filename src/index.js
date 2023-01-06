@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./ErrorPage";
-import CarrierPage from "./Routes/CarrierPage";
-import Home from "./Routes/Home";
+import CarrierPage from "./Routes/06-CarrierPage/CarrierPage";
+import Home from "./Routes/01-Home/Home";
 import Root from "./Routes/Root";
-import SupportFaqPage from "./Routes/SupportFaqPage";
-import SupportPage from "./Routes/SupportPage";
-import TeamPage from "./Routes/TeamPage";
-import TossCertPage from "./Routes/TossCertPage";
+import SupportFaqPage from "./Routes/04-SupportFaqPage/SupportFaqPage";
+import SupportPage from "./Routes/03-SupportPage/SupportPage";
+import TeamPage from "./Routes/02-TeamPage/TeamPage";
+import TossCertPage from "./Routes/05-TossCertPage/TossCertPage";
 
 const router = createBrowserRouter([
   {

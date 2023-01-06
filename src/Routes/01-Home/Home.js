@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Main03 from "../Components/Main03";
-import ServiceList from "../Components/ServiceList";
+import Main03 from "components/Main03";
+import ServiceList from "components/ServiceList";
 import "./Home.scss";
 
 export default function Home() {
@@ -40,6 +40,7 @@ export default function Home() {
           </svg>
         </div>
       </section>
+      {/* main2 */}
       <section className="main_2" ref={scrollRef}>
         <div className="main_2_inner">
           <div className="main_2_title">
