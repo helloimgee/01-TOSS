@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React from "react";
 import "./ServiceList.scss";
-import serviceData from "../assets/serviceData";
+import serviceData from "@assets/serviceData";
 
 export default function ServiceList() {
   const serviceList = serviceData.map((list) => {

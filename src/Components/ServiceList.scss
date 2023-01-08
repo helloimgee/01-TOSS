@@ -1,3 +1,5 @@
+@import "../style/variables";
+
 .service-wrap {
   ul {
     display: flex;
@@ -6,7 +8,7 @@
 }
 
 .service-list {
-  width: 350px;
+  width: 325px;
   margin: 0 200px 100px 0px;
 
   .service-icon {
@@ -15,6 +17,11 @@
     border-radius: 26px;
     background-color: red;
     margin-bottom: 30px;
+    @include mobile {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+    }
   }
 
   .service-txt-wrap {
@@ -23,13 +30,13 @@
     span {
       display: block;
       &:nth-child(1) {
-        font-size: 1.1rem;
+        font-size: 20px;
         font-weight: 600;
         margin-bottom: 6px;
       }
       &:nth-child(2) {
-        font-weight: 500;
-        font-size: 1rem;
+        font-weight: 400;
+        font-size: 18px;
         color: #8b95a1;
         white-space: pre-wrap;
       }

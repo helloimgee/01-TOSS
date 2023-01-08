@@ -1,0 +1,29 @@
+/* 변수 */
+$blue : #3182f6;
+$h0: 4.5rem;// 72px
+$h1 : 4.13rem;
+$h2 : 3.5rem; // 56px
+$h3: 3.13rem;
+$h4: 1.75rem;
+
+/* 반응형 화면크기 */
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1024px;
+
+
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

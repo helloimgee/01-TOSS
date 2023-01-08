@@ -1,0 +1,18 @@
+.supportFaqPage {
+  &.main {
+    padding: 120px 0;
+    max-width: 1140px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 60px;
+    }
+
+    div.main-faq {
+      margin-top: 72px;
+      display: flex;
+    }
+  }
+}

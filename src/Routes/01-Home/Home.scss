@@ -1,97 +1,133 @@
-section.main_1 {
-  height: 100vh;
-  background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 5%,
-      rgba(255, 255, 255, 0) 55%
-    ),
-    url("../../public/images/new_main.png");
-  background-repeat: no-repeat center;
-  background-size: cover;
-  background-position: 5%;
-  text-align: center;
+@import "../../style/variables.scss";
 
-  div.main_1_contents {
-    opacity: 0;
-    height: 100%;
-    transition: all 1.2s ease-out;
-    &.on {
-      opacity: 1;
-    }
+.home {
+  main.home-main {
+    height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 5%,
+        rgba(255, 255, 255, 0) 35%
+      ),
+      url("../../../public/images/new_main.png") no-repeat center / cover;
 
-    div.main_1_title {
-      position: relative;
-      top: 19%;
-      span {
-        display: block;
-        width: 600px;
-        margin: 0 auto;
-        font-size: 3.5rem;
-        font-weight: 900;
-        line-height: 1.5;
-        letter-spacing: -0.1em;
+    div.home-main-op {
+      opacity: 0;
+      height: 100%;
+      transition: all 1.2s ease-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &.on {
+        opacity: 1;
       }
-    }
-    svg {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      fill: #aaa;
-      animation: motion 0.8s ease-out infinite alternate;
-      image {
+
+      div.home-main-op-tit {
+        position: relative;
+        top: 19%;
+        text-align: center;
+        span {
+          display: block;
+          font-size: $h1;
+          font-weight: 700;
+          line-height: 1.5;
+        }
+      }
+      svg.home-main-op-arrow {
+        position: absolute;
         width: 50px;
         height: 50px;
+        fill: #aaa;
+        animation: upMotion 0.8s ease-out infinite alternate;
+        image {
+          width: 50px;
+          height: 50px;
+        }
       }
     }
   }
-}
 
-@keyframes motion {
-  from {
-    bottom: 7%;
+  @keyframes upMotion {
+    from {
+      bottom: 7%;
+    }
+    to {
+      bottom: 6%;
+    }
   }
-  to {
-    bottom: 6%;
-  }
-}
 
-section.main_2 {
-  background-color: #f9fafb;
-  width: 100%;
-  padding: 250px 0;
-  div.main_2_inner {
+  section.section-01 {
+    background-color: #f9fafb;
+
+    div.section-01-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 250px 0;
+
+      div.section-01-wrap-margin {
+        max-width: calc(100% - 90px);
+        margin: 0 auto;
+      }
+    }
+
+    div.section-01-wrap-tit {
+      margin-bottom: 100px;
+
+      span {
+        display: block;
+        margin-bottom: 20px;
+        white-space: pre-wrap;
+        word-break: keep-all;
+
+        &:nth-child(1) {
+          color: #3182f6;
+          font-size: 1.75rem;
+          font-weight: 700;
+          @include tablet {
+            font-size: 1.75rem;
+          }
+          @include mobile {
+            font-size: 2.25rem;
+          }
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          color: #191f28;
+          font-size: $h3;
+          font-weight: 700;
+          @include tablet {
+            font-size: $h3;
+          }
+        }
+      }
+    }
+  }
+
+  div.home-section-02-wrap {
+    padding: 200px 0;
+  }
+
+  div.home-section-02-wrap-tit {
     max-width: 1140px;
-    margin: 0 auto;
-  }
-  div.main_2_title {
+    margin: auto;
     margin-bottom: 100px;
-    animation: main2 0.8s ease-out;
+    font-size: $h2;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
     span {
-      display: block;
-      margin-bottom: 20px;
-      letter-spacing: -0.1em;
-      white-space: pre-wrap;
-      word-break: keep-all;
-
-      &:nth-child(1) {
-        color: #3182f6;
-        font-size: 1.5rem;
-        font-weight: 700;
+      display: inline-block;
+    }
+    span:nth-child(2) {
+      margin-left: 10px;
+      color: $blue;
+      @include tablet {
+        margin-left: 6.7px;
       }
-      &:nth-child(2), &:nth-child(3) {
-        color: #191f28;
-        font-size: 2.5rem;
-        font-weight: 700;
+      @include mobile {
+        margin-left: 5.36px;
       }
     }
   }
 }
 
-@keyframes main2 {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(10px);
-  }
-}

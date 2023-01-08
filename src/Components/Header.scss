@@ -1,20 +1,24 @@
+@import "../style/variables.scss";
+
 header {
   width: 100vw;
+  height: 59px;
   position: fixed;
   background-color: transparent;
   z-index: 5;
   // border-bottom: 1px solid #ccc;
 
   div.header {
-    display: flex;
-    justify-content: space-between;
     max-width: 1140px;
     margin: 0 auto;
-    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
     font-weight: 400;
 
     div.header-logo {
-      padding: 12px;
+      padding: 25px 12px;
       margin-right: 20px;
       img {
         width: 65px;
@@ -28,8 +32,28 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 12px;
+        padding: 25px 12px;
         margin-right: 15px;
+        color: #4e5968;
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+    
+    div.header-menu-mobile {
+      display: none;
+      button {
+        width: 76px;
+        height: 30px;
+        border-radius: 15px;
+        font-size: 0.25rem;
+        background-color: $blue;
+        color: #fff;
+        margin-right: 12px;
+      }
+      @include mobile {
+        display: flex;
       }
     }
 
@@ -37,6 +61,7 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-left: 44px;
 
       a {
         padding: 12px;

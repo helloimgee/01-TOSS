@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
 import ErrorPage from "./ErrorPage";
-import CarrierPage from "./Routes/06-CarrierPage/CarrierPage";
-import Home from "./Routes/01-Home/Home";
-import Root from "./Routes/Root";
-import SupportFaqPage from "./Routes/04-SupportFaqPage/SupportFaqPage";
-import SupportPage from "./Routes/03-SupportPage/SupportPage";
-import TeamPage from "./Routes/02-TeamPage/TeamPage";
-import TossCertPage from "./Routes/05-TossCertPage/TossCertPage";
+import CareerPage from "./routes/06-CareerPage/CareerPage";
+import Home from "./routes/01-Home/Home";
+import Root from "./routes/Root";
+import SupportFaqPage from "./routes/04-SupportFaqPage/SupportFaqPage";
+import SupportPage from "./routes/03-SupportPage/SupportPage";
+import TeamPage from "./routes/02-TeamPage/TeamPage";
+import TossCertPage from "./routes/05-TossCertPage/TossCertPage";
+import "./reset.scss";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/career",
-        element: <CarrierPage />,
+        element: <CareerPage />,
         errorElement: <ErrorPage />,
       },
     ],

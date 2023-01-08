@@ -27,15 +27,50 @@ export default function Header() {
           <Link to="/career">
             <span>채용</span>
           </Link>
+          <div className="header-translate">
+            <Link to="/">
+              <span>KOR</span>
+            </Link>
+            <div className="line" />
+            <Link to="/">
+              <span>ENG</span>
+            </Link>
+          </div>
         </div>
-        <div className="header-translate">
-          <Link to="/">
-            <span>KOR</span>
-          </Link>
-          <div className="line" />
-          <Link to="/">
-            <span>ENG</span>
-          </Link>
+        <div className="header-menu-mobile">
+          <button type="button">앱 다운로드</button>
+          <div className="hamburger">
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="48" height="48" fill="white" fillOpacity="0.01" />
+              <path
+                d="M7.94977 11.9498H39.9498"
+                stroke="#000000"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M7.94977 23.9498H39.9498"
+                stroke="#000000"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M7.94977 35.9498H39.9498"
+                stroke="#000000"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </header>

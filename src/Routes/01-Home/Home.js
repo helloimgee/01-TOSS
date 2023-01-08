@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React, { useEffect, useRef, useState } from "react";
-import Main03 from "components/Main03";
-import ServiceList from "components/ServiceList";
+import ServiceList from "@components/ServiceList";
+import InfiniteSlide from "@components/InfiniteSlide";
 import "./Home.scss";
 
 export default function Home() {
@@ -23,13 +24,15 @@ export default function Home() {
 
   return (
     <div className="home">
-      <section className="main_1">
-        <div className={`main_1_contents${Load ? " on" : ""}`}>
-          <div className="main_1_title">
+      {/* main */}
+      <main className="home-main">
+        <div className={`home-main-op${Load ? " on" : ""}`}>
+          <div className="home-main-op-tit">
             <span>금융의 모든 것</span>
             <span>토스에서 쉽고 간편하게</span>
           </div>
           <svg
+            className="home-main-op-arrow"
             onClick={scroll}
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -39,19 +42,32 @@ export default function Home() {
             <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
           </svg>
         </div>
-      </section>
-      {/* main2 */}
-      <section className="main_2" ref={scrollRef}>
-        <div className="main_2_inner">
-          <div className="main_2_title">
-            <span>알면 좋은 금융</span>
-            <span>이런 서비스도</span>
-            <span>한번 써보세요</span>
+      </main>
+      {/* section-01 */}
+      <section className="home section-01" ref={scrollRef}>
+        <div className="home section-01-wrap">
+          <div className="home section-01-wrap-margin">
+            <div className="home section-01-wrap-tit">
+              <span>알면 좋은 금융</span>
+              <span>이런 서비스도</span>
+              <span>한번 써보세요</span>
+            </div>
+            <ServiceList />
           </div>
-          <ServiceList />
         </div>
       </section>
-      <Main03 />
+      {/* section-02 */}
+      <section className="home-section-02">
+        <div className="home-section-02-wrap">
+          <div className="home-section-02-wrap-tit">
+            <span>함께 하는 이용기관</span>
+            <span>400+</span>
+            <br />
+            <span>다양한 서비스와 공공 분야에서</span>
+          </div>
+          <InfiniteSlide />
+        </div>
+      </section>
     </div>
   );
 }
