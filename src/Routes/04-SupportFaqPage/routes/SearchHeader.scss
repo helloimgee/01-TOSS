@@ -1,0 +1,21 @@
+@import "../../../style/variables";
+
+.searchHeader {
+  width: 200px;
+  margin-right: 60px;
+  font-weight: 600;
+  font-size: 20px;
+  li:nth-child(1) {
+    span {
+      color: $blue;
+    }
+  }
+  li {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    line-height: 150%;
+    span {
+      color: #8b95a1;
+    }
+  }
+}

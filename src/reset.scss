@@ -113,7 +113,7 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: black;
+  color: currentColor;
   text-decoration: none;
 }
 blockquote,
@@ -136,18 +136,18 @@ button {
   -moz-appearance: none;
   appearance: none;
   background-color: transparent; // 뒷 배경을 부모와 같게 맞춰줌
-	outline: none;
+  outline: none;
   box-shadow: none;
-	border: none;
+  border: none;
 }
 
-@include tablet {
-	html {
-		font-size: 10px;
-	}
-}
-@include mobile {
-  html {
+html {
+  font-size: 14px;
+  letter-spacing: -0.1rem;
+  @include tablet {
+    font-size: 10px;
+  }
+  @include mobile {
     font-size: 8px;
   }
 }

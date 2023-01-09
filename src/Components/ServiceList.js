@@ -6,12 +6,14 @@ import serviceData from "@assets/serviceData";
 export default function ServiceList() {
   const serviceList = serviceData.map((list) => {
     return (
-      <li className="service-list" key={list.id}>
+      <li className="serviceList" key={list.id}>
         <div
-          className="service-icon"
+          className="serviceList icon"
           style={{ backgroundColor: `${list.color}` }}
-        />
-        <div className="service-txt-wrap">
+        >
+          <img src={list.img} alt={list.id} />
+        </div>
+        <div className="serviceList txt-wrap">
           <span>{list.title}</span>
           <span>{list.des}</span>
         </div>
@@ -19,7 +21,7 @@ export default function ServiceList() {
     );
   });
   return (
-    <div className="service-wrap">
+    <div className="serviceList wrap">
       <ul>{serviceList}</ul>
     </div>
   );

@@ -10,7 +10,9 @@ export default function InfiniteSlide() {
         className="list"
         style={{ backgroundColor: `${list.color}` }}
         key={list.id}
-      />
+      >
+        <img src={list.img} alt={list.id} />
+      </li>
     );
   });
 
