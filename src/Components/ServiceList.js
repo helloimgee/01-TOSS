@@ -2,8 +2,9 @@
 import React from "react";
 import "./ServiceList.scss";
 import serviceData from "@assets/serviceData";
+import PropTypes from "prop-types";
 
-export default function ServiceList() {
+export default function ServiceList({ className }) {
   const serviceList = serviceData.map((list) => {
     return (
       <li className="serviceList" key={list.id}>
@@ -21,8 +22,12 @@ export default function ServiceList() {
     );
   });
   return (
-    <div className="serviceList wrap">
+    <div className={`serviceList ${className}`}>
       <ul>{serviceList}</ul>
     </div>
   );
 }
+
+ServiceList.propTypes = {
+  className: PropTypes.string.isRequired,
+};

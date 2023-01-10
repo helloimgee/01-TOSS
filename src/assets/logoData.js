@@ -37,7 +37,7 @@ const imgData = [
   {
     id: 8,
     color: "#e54d5b",
-    img: "/images/logoData8.svg",
+    img: "/images/logoData8.png",
   },
   {
     id: 9,
@@ -52,12 +52,12 @@ const imgData = [
   {
     id: 11,
     color: "#ff4600",
-    img: "/images/logoData11.svg",
+    img: "/images/logoData11.png",
   },
   {
     id: 12,
     color: "#672a0e",
-    img: "/images/logoData12.svg",
+    img: "/images/logoData12.png",
   },
   {
     id: 13,
@@ -82,7 +82,7 @@ const imgData = [
   {
     id: 17,
     color: "#672a0e",
-    img: "/images/logoData17.svg",
+    img: "/images/logoData17.png",
   },
   {
     id: 18,
@@ -92,12 +92,12 @@ const imgData = [
   {
     id: 19,
     color: "#008541",
-    img: "/images/logoData19.svg",
+    img: "/images/logoData19.png",
   },
   {
     id: 20,
     color: "#e54d5b",
-    img: "/images/logoData20.svg",
+    img: "/images/logoData20.png",
   },
   {
     id: 21,
@@ -112,12 +112,12 @@ const imgData = [
   {
     id: 23,
     color: "#ff4600",
-    img: "/images/logoData23.svg",
+    img: "/images/logoData23.png",
   },
   {
     id: 24,
     color: "#672a0e",
-    img: "/images/logoData24.svg",
+    img: "/images/logoData24.png",
   },
 ];
 

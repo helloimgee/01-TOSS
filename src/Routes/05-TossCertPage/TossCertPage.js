@@ -4,6 +4,7 @@ import "./TossCertPage.scss";
 export default function TossCertPage() {
   return (
     <div className="tossCertPage">
+      {/* 메인 */}
       <div className="tossCertPage main">
         <div className="tossCertPage main-cont">
           <div className="tossCertPage main-cont-tit">
