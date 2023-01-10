@@ -24,6 +24,7 @@ export default function SupportPage() {
           </div>
           <div className="support-main-cont-state">
             <span>현재 상담 대기</span>
+            <span />
             <span>보통</span>
           </div>
           <div className="support-main-cont-img">

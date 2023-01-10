@@ -1,20 +1,36 @@
+@import "../style/variables";
+
 div.roller {
   ul {
     display: flex;
     overflow: hidden;
   }
-}
-li.list {
-  flex-shrink: 0;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  margin-right: 10px;
-  overflow: hidden;
-  animation-name: InfiniteSlide;
-  // animation-iteration-count: infinite;
-  // animation-duration: 4s;
-  animation: InfiniteSlide 60s linear infinite;
+  li.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+    animation-name: InfiniteSlide;
+    // animation-iteration-count: infinite;
+    // animation-duration: 4s;
+    animation: InfiniteSlide 60s linear infinite;
+    @include mobile {
+      width: 80px;
+      height: 80px;
+      margin-right: 25px;
+    }
+
+    img {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 @keyframes InfiniteSlide {

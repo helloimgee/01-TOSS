@@ -1,8 +1,9 @@
 /* eslint-disable import/no-unresolved */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import ServiceList from "@components/ServiceList";
 import InfiniteSlide from "@components/InfiniteSlide";
 import "./Home.scss";
+// import ArrowIcon from "@components/Arrow";
 
 export default function Home() {
   const [Load, setLoad] = useState(false);
@@ -22,6 +23,45 @@ export default function Home() {
     });
   };
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    // 0에서 -> 현재 스크롤바 위치로 바꿔주는 함수
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  }, []);
+  console.log(scrollPosition);
+
+  // div 뷰포트 안에 들어오면 스크롤 이벤트 실행
+  const upScrollRef = useRef(null);
+  const elementInView = (el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return (
+      elementTop <=
+      (window.innerHeight || document.documentElement.clientHeight)
+    );
+  };
+
+  const handleScroll = useCallback(() => {
+    const { current } = upScrollRef;
+    if (elementInView) {
+      current.style.transitionProperty = "opacity transform";
+      current.style.transitionDuration = "1s";
+      current.style.transitionTimingFunction = "cubic-bezier(0,0,0.2,1)";
+      current.style.transitionDelay = "0s";
+      current.style.opacity = 1;
+      current.style.transform = "translate3d(0,0,0)";
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
     <div className="home">
       {/* main */}
@@ -31,6 +71,11 @@ export default function Home() {
             <span>금융의 모든 것</span>
             <span>토스에서 쉽고 간편하게</span>
           </div>
+          {/* <ArrowIcon
+            clname="home-main-op-arrow"
+            color="#fff"
+            onClick={scroll}
+          /> */}
           <svg
             className="home-main-op-arrow"
             onClick={scroll}
@@ -47,12 +92,17 @@ export default function Home() {
       <section className="home section-01" ref={scrollRef}>
         <div className="home section-01-wrap">
           <div className="home section-01-wrap-margin">
-            <div className="home section-01-wrap-tit">
+            <div
+              className={`home section-01-wrap-tit${
+                scrollPosition > 400 ? " on" : ""
+              }`}
+            >
               <span>알면 좋은 금융</span>
               <span>이런 서비스도</span>
               <span>한번 써보세요</span>
             </div>
-            <ServiceList />
+            {/* <ServiceList /> */}
+            <ServiceList className={elementInView ? " on" : ""} />
           </div>
         </div>
       </section>

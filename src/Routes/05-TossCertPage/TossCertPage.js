@@ -4,9 +4,10 @@ import "./TossCertPage.scss";
 export default function TossCertPage() {
   return (
     <div className="tossCertPage">
+      {/* 메인 */}
       <div className="tossCertPage main">
-        <div className="tossCertPage main-cont">
-          <div className="tossCertPage main-cont-tit">
+        <div className="tossCertPage main-wrap">
+          <div className="tossCertPage main-cont">
             <p>
               인증이 필요한 <br />
               모든 순간, <br />

@@ -8,7 +8,7 @@
       "@hooks/*": ["src/components/*"],
       "@routes/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"],
+      "@utils/*": ["src/hooks/*"],
       "@public/*": ["public/*"]
     }
   }

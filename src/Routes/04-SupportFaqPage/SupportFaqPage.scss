@@ -1,20 +1,30 @@
+@import "../../style/variables";
+
 .supportFaqPage {
   
   .main {
-    padding: 120px 0;
-    max-width: 1140px;
+    padding: 120px 48px;
+    max-width: 1236px;
     margin: 0 auto;
 
     h1 {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 60px;
+      @include mobile {
+        display: none;
+      }
     }
 
     div.main-faq {
       margin-top: 72px;
       display: flex;
 
+      div.searchHeader {
+        @include mobile {
+          display: none;
+        }
+      }
 
       div.main-faq-list {
         a {
@@ -25,6 +35,10 @@
           font-weight: 600;
           line-height: 150%;
           color: #4e5968;
+          @include mobile {
+            font-size: 17px;
+            font-weight: 400;
+          }
           }
           a::before {
             content: "Q";
