@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ServiceList from "@components/ServiceList";
 import InfiniteSlide from "@components/InfiniteSlide";
 import "./Home.scss";
@@ -31,36 +31,40 @@ export default function Home() {
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
   }, []);
-  console.log(scrollPosition);
+  // console.log(scrollPosition);
 
   // div 뷰포트 안에 들어오면 스크롤 이벤트 실행
   const upScrollRef = useRef(null);
-  const elementInView = (el) => {
-    const elementTop = el.getBoundingClientRect().top;
-    return (
+  const [scrollPosition2, setScrollPosition2] = useState(0);
+
+  const elementInView = () => {
+    const elementTop = upScrollRef.current.getBoundingClientRect().top;
+    setScrollPosition2(
       elementTop <=
-      (window.innerHeight || document.documentElement.clientHeight)
+        (window.innerHeight || document.documentElement.clientHeight)
     );
   };
+  // console.log(elementInView());
+  window.addEventListener("scroll", elementInView);
 
-  const handleScroll = useCallback(() => {
-    const { current } = upScrollRef;
-    if (elementInView) {
-      current.style.transitionProperty = "opacity transform";
-      current.style.transitionDuration = "1s";
-      current.style.transitionTimingFunction = "cubic-bezier(0,0,0.2,1)";
-      current.style.transitionDelay = "0s";
-      current.style.opacity = 1;
-      current.style.transform = "translate3d(0,0,0)";
-    }
-  }, []);
+  // const handleScroll = useCallback(() => {
+  //   const { current } = upScrollRef;
+  //   if (elementInView) {
+  //     current.style.transitionProperty = "opacity transform";
+  //     current.style.transitionDuration = "1s";
+  //     current.style.transitionTimingFunction = "cubic-bezier(0,0,0.2,1)";
+  //     current.style.transitionDelay = "0s";
+  //     current.style.opacity = 1;
+  //     current.style.transform = "translate3d(0,0,0)";
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [handleScroll]);
 
   return (
     <div className="home">
@@ -102,7 +106,10 @@ export default function Home() {
               <span>한번 써보세요</span>
             </div>
             {/* <ServiceList /> */}
-            <ServiceList className={elementInView ? " on" : ""} />
+            <ServiceList
+              className={!scrollPosition2 ? "" : "on"}
+              ref={upScrollRef}
+            />
           </div>
         </div>
       </section>
@@ -116,6 +123,14 @@ export default function Home() {
             <span>다양한 서비스와 공공 분야에서</span>
           </div>
           <InfiniteSlide />
+        </div>
+      </section>
+      {/* section-03 */}
+      <section className="home-section-03">
+        <div className="home-section-03-wrap">
+          <span>꼭 필요했던 금융</span>
+          <div className="home-section-03-left" />
+          <div className="home-section-03-right" />
         </div>
       </section>
     </div>

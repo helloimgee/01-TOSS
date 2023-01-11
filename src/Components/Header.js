@@ -1,18 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable no-nested-ternary */
+import React, { useEffect, useState } from "react";
+import { Link, useResolvedPath } from "react-router-dom";
 import "./Header.scss";
 
 export default function Header() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  }, []);
+  console.log(scrollPosition);
+  const { pathname } = useResolvedPath();
   return (
-    <header>
+    <header
+      className={pathname !== "/career" && scrollPosition > 30 ? "on" : ""}
+    >
       <div className="header">
         <div className="header-wrap">
           <div className="header-logo">
             <Link to="/">
-              <img src="/images/logo.png" alt="logo" />
+              {pathname === "/team" ? (
+                <img src="/images/logo-white.svg" alt="logo2" />
+              ) : pathname === "/tosscert" ? (
+                <img src="/images/logo-white.svg" alt="logo2" />
+              ) : pathname === "/career" ? (
+                <img src="/images/logo-white.svg" alt="logo2" />
+              ) : (
+                <img src="/images/logo.png" alt="logo" />
+              )}
             </Link>
           </div>
-          <div className="header-menu">
+          <div
+            className={`header-menu ${
+              pathname === "/team" ||
+              pathname === "/tosscert" ||
+              pathname === "/career"
+                ? "on"
+                : ""
+            }`}
+          >
             <Link to="/team">
               <span>회사 소개</span>
             </Link>
@@ -34,7 +62,7 @@ export default function Header() {
               </Link>
               <div className="line" />
               <Link to="/">
-                <span>ENG</span>
+                <span className="eng">ENG</span>
               </Link>
             </div>
           </div>
@@ -51,14 +79,14 @@ export default function Header() {
                 <rect width="48" height="48" fill="white" fillOpacity="0.01" />
                 <path
                   d="M7.94977 11.9498H39.9498"
-                  stroke="#000000"
+                  stroke={pathname === "/team" ? "#fff" : "#000000"}
                   strokeWidth="4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M7.94977 23.9498H39.9498"
-                  stroke="#000000"
+                  stroke={pathname === "/team" ? "#fff" : "#000000"}
                   strokeWidth="4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
