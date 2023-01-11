@@ -10,8 +10,10 @@ export default function Header() {
   };
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scr0ll", updateScroll);
+    };
   }, []);
-  console.log(scrollPosition);
   const { pathname } = useResolvedPath();
   return (
     <header

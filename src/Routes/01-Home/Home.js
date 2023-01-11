@@ -30,22 +30,26 @@ export default function Home() {
   };
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scr0ll", updateScroll);
+    };
   }, []);
   // console.log(scrollPosition);
 
   // div 뷰포트 안에 들어오면 스크롤 이벤트 실행
   const upScrollRef = useRef(null);
-  const [scrollPosition2, setScrollPosition2] = useState(0);
+  const [scrollPosition2, setScrollPosition2] = useState(false);
 
   const elementInView = () => {
+    if (!upScrollRef) return;
     const elementTop = upScrollRef.current.getBoundingClientRect().top;
     setScrollPosition2(
       elementTop <=
         (window.innerHeight || document.documentElement.clientHeight)
     );
   };
-  // console.log(elementInView());
   window.addEventListener("scroll", elementInView);
+  // console.log(scrollPosition2);
 
   // const handleScroll = useCallback(() => {
   //   const { current } = upScrollRef;

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
 import "./CareerPage.scss";
 import careerList01 from "../../assets/careerList01";
@@ -9,13 +10,25 @@ export default function CareerPage() {
   };
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+    };
   }, []);
-  console.log(scrollPosition);
+
+  // const [isHovering, setIsHovering] = useState(false);
+
   return (
     <div className="careerPage">
       {/* main */}
       <div className="careerPage-main">
-        <div className="careerPage-main-bg" />
+        <div
+          className="careerPage-main-bg"
+          // style={
+          //   // scrollPosition > 540
+          //   //   ? { transform: `scale(1.58)` }
+          //   //   : { transform: `scale(1)` }
+          // }
+        />
         <div className="careerPage-main-filter" />
         <div className="careerPage-main-tit">
           <p style={scrollPosition > 45 ? { opacity: 0 } : { opacity: 1 }}>
@@ -34,17 +47,31 @@ export default function CareerPage() {
               토스커뮤니티에서는 누구나 각자의 방식으로 몰입할 수 있습니다
             </p>
           </div>
-          <div className="careerPage-section-01-liWrap">
+          <div className="careerPage-section-01-cont">
             {careerList01.map((list) => {
               return (
                 <div
-                  className="careerPage-section-01-liWrap-li"
-                  style={{
-                    background: `url(${list.bg}) no-repeat center / cover`,
-                  }}
+                  className="careerPage-section-01-cont-li"
+                  // onMouseOver={setIsHovering(true)}
+                  // onFocus={setIsHovering(true)}
+                  // onMouseOut={setIsHovering(false)}
+                  // onBlur={setIsHovering(false)}
+                  key={list.id}
                 >
-                  <p>{list.des}</p>
-                  <div className="careerPage-section-01-liWrap-li-icon" />
+                  <div
+                    className="careerPage-section-01-cont-li-img"
+                    // {` ${
+                    //   isHovering ? "hover" : ""
+                    // }`}
+                    style={{
+                      background: `url(${list.bg}) no-repeat center / cover`,
+                    }}
+                  />
+                  <div className="careerPage-section-01-cont-li-txt">
+                    <p>{list.hidden}</p>
+                    <p>{list.des}</p>
+                  </div>
+                  <div className="careerPage-section-01-cont-li-icon" />
                 </div>
               );
             })}
