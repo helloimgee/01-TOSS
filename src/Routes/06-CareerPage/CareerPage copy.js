@@ -48,17 +48,17 @@ export default function CareerPage() {
       {/* main */}
       <div className="careerPage-main">
         <div
-          className="careerPage-main-bg"
+          className={`careerPage-main-bg${scrollPosition > 2000 ? "off" : ""}`}
           style={{
             transform: `scale(${
               // eslint-disable-next-line no-nested-ternary
-              1 + window.scrollY * 0.0009875 < 1.58
-                ? 1 + window.scrollY * 0.0009875
+              1 + window.scrollY * 0.0008333 < 1.5
+                ? 1 + window.scrollY * 0.0008333
                 : 1.5
             })`,
             opacity:
-              1 - window.scrollY * 0.0007692308 > 0
-                ? 1 - window.scrollY * 0.0007692308
+              1 - window.scrollY * 0.00008333 > 0
+                ? 1 - window.scrollY * 0.0008333
                 : 0,
           }}
           // style={
@@ -68,15 +68,9 @@ export default function CareerPage() {
           // }
         />
         <div
-          className="careerPage-main-filter"
-          // style={
-          //   scrollPosition > 600
-          //     ? { opacity: 0.3 + window.scrollY * 0.0004471438 }
-          //     : { opacity: 0.3 } &&
-          //   scrollPosition > 1400
-          //     ? { opacity: 1 - window.scrollY * 0.0004471438 }
-          //     : { opacity: 1 },
-          // }
+          className={`careerPage-main-filter ${
+            scrollPosition > 45 ? "off" : ""
+          }`}
         />
         <p
           className="careerPage-main-tit"
@@ -93,17 +87,15 @@ export default function CareerPage() {
           달려가는 느낌. <br /> 해냈을 때의 쾌감과 기쁨.
         </p>
         <p
-          className={`careerPage-main-scrollTit2 scrollTit-common ${
-            scrollPosition > 800 ? "scrolled" : ""
-          }`}
+          className="careerPage-main-scrollTit2 scrollTit-common"
+          style={{ oapcity: 1 }}
         >
           이 몰입의 경험을 일에서 느낀다면 어떨까요? <br /> 일을 방해하는 요소가
           없다면 어떨까요?
         </p>
         <p
-          className={`careerPage-main-scrollTit3 scrollTit-common ${
-            scrollPosition > 1100 ? "scrolled" : ""
-          }`}
+          className="careerPage-main-scrollTit3 scrollTit-common"
+          style={{ oapcity: 0 }}
         >
           토스커뮤니티에 모인 사람들은 <br /> 일에 몰입하는 즐거움과 성장의
           기쁨을 느끼며, <br /> 새로운 역사를 만들고 있습니다.

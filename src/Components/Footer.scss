@@ -1,3 +1,5 @@
+@import "../style/variables";
+
 .footer {
   max-width: 1064px;
   padding: 50px 67px 100px;
@@ -8,12 +10,18 @@
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 50px;
+  @include mobile {
+    flex-direction: column;
+  }
 
   ul {
     width: 170px;
     font-size: 15px;
     line-height: 30px;
     color: #6b7684;
+    @include mobile {
+      padding-bottom: 40px;
+    }
 
     li:nth-of-type(1) {
       color: #333d4b;
