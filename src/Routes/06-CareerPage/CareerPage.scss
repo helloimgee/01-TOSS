@@ -1,6 +1,5 @@
 @import "../../style/variables";
 
-<<<<<<< HEAD
 .careerPage {
   .careerPage-main {
     position: relative;
@@ -16,23 +15,6 @@
         background: url("../../../public/images/careerPage-main-mobile.jpeg")
           no-repeat center center / cover;
       }
-=======
-.careerPage-main {
-  width: 100%;
-  height: 3912px;
-
-  .careerPage-main-bg {
-    width: 100%;
-    height: 800px;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    background: url("../../../public/images/careerPage-main.jpg") no-repeat
-      center center / cover;
-    @include mobile {
-      background: url("../../../public/images/careerPage-main-mobile.jpeg")
-        no-repeat center center / cover;
->>>>>>> main
     }
   }
   .careerPage-main-filter {
@@ -47,16 +29,11 @@
   .careerPage-main-tit {
     p {
       width: 100%;
-<<<<<<< HEAD
       height: 800px;
       opacity: 0.3;
       background-color: rgba(0, 0, 0);
       position: absolute;
       top: 0;
-=======
-      position: fixed;
-      top: 22vh;
->>>>>>> main
       left: 0;
       z-index: 1;
       font-size: $h0;
