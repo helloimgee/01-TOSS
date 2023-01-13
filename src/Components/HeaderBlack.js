@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useResolvedPath } from "react-router-dom";
 import "./Header.scss";
 
-export default function Header() {
+export default function HeaderBlack() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
@@ -23,15 +23,7 @@ export default function Header() {
         <div className="header-wrap">
           <div className="header-logo">
             <Link to="/">
-              {pathname === "/team" ? (
-                <img src="/images/logo-white.svg" alt="logo2" />
-              ) : pathname === "/tosscert" ? (
-                <img src="/images/logo-white.svg" alt="logo2" />
-              ) : pathname === "/career" ? (
-                <img src="/images/logo-white.svg" alt="logo2" />
-              ) : (
-                <img src="/images/logo.png" alt="logo" />
-              )}
+              <img src="/images/logo-white.svg" alt="logo2" />
             </Link>
           </div>
           <div

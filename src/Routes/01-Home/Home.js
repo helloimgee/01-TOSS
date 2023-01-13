@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable import/no-unresolved */
 import React, { useEffect, useRef, useState } from "react";
 import ServiceList from "@components/ServiceList";
@@ -133,8 +134,30 @@ export default function Home() {
       <section className="home-section-03">
         <div className="home-section-03-wrap">
           <span>꼭 필요했던 금융</span>
-          <div className="home-section-03-left" />
-          <div className="home-section-03-right" />
+          <div
+            className="home-section-03-left"
+            style={{
+              transform: `translateX(${
+                scrollPosition < 3222
+                  ? 0
+                  : scrollPosition > 3222 && scrollPosition < 4124
+                  ? 0 - (window.scrollY - 3222) * 0.1
+                  : -100
+              }%)`,
+            }}
+          />
+          <div
+            className="home-section-03-right"
+            style={{
+              transform: `translate(${
+                scrollPosition < 3222
+                  ? 0
+                  : scrollPosition > 3222 && scrollPosition < 4124
+                  ? 0 + (window.scrollY - 3222) * 0.1
+                  : 100
+              }%)`,
+            }}
+          />
         </div>
       </section>
     </div>

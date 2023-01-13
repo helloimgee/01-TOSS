@@ -57,6 +57,18 @@
   font-size: 13px;
   line-height: 18px;
   letter-spacing: 0.03em;
+
+  @include tablet {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @include mobile {
+    grid-template-columns: auto;
+    grid-column-gap: unset;
+    column-gap: unset;
+    grid-row-gap: 6px;
+    row-gap: 6px;
+  }
 }
 
 .footerWrap-sns {

@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
 import "./CareerPage.scss";
@@ -48,18 +49,14 @@ export default function CareerPage() {
       {/* main */}
       <div className="careerPage-main">
         <div
-          className={`careerPage-main-bg${scrollPosition > 2000 ? "off" : ""}`}
+          className="careerPage-main-bg"
           style={{
             transform: `scale(${
               // eslint-disable-next-line no-nested-ternary
-              1 + window.scrollY * 0.0008333 < 1.5
-                ? 1 + window.scrollY * 0.0008333
+              1 + window.scrollY * 0.0009875 < 1.58
+                ? 1 + window.scrollY * 0.0009875
                 : 1.5
             })`,
-            opacity:
-              1 - window.scrollY * 0.00008333 > 0
-                ? 1 - window.scrollY * 0.0008333
-                : 0,
           }}
           // style={
           //   // scrollPosition > 540
@@ -68,9 +65,27 @@ export default function CareerPage() {
           // }
         />
         <div
-          className={`careerPage-main-filter ${
-            scrollPosition > 45 ? "off" : ""
-          }`}
+          className="careerPage-main-filter"
+          style={{
+            opacity: `${
+              scrollPosition < 600
+                ? 0.3
+                : scrollPosition > 600 && scrollPosition < 1400
+                ? 0.3 + window.scrollY * 0.0004471438
+                : scrollPosition > 1400
+                ? 1 - window.scrollY * 0.0004471438
+                : 1
+            }`,
+            // opacity: `${
+            //   scrollPosition > 1400 ? 1 - window.scrollY * 0.0004471438 : 1
+            // }`,
+            // // eslint-disable-next-line no-dupe-keys
+            // opacity: `${
+            //   scrollPosition > 600 &&
+            //   scrollPosition < 1400 &&
+            //   0.3 + window.scrollY * 0.0004471438
+            // }`,
+          }}
         />
         <p
           className="careerPage-main-tit"
