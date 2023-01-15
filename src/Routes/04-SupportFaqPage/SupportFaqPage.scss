@@ -8,7 +8,7 @@
     margin: 0 auto;
 
     h1 {
-      font-size: 2rem;
+      font-size: 32px;
       font-weight: 700;
       margin-bottom: 60px;
       @include mobile {
@@ -17,7 +17,6 @@
     }
 
     div.main-faq {
-      margin-top: 72px;
       display: flex;
 
       div.searchHeader {

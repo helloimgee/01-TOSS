@@ -17,7 +17,7 @@ export default function Header() {
   const { pathname } = useResolvedPath();
   return (
     <header
-      className={pathname !== "/career" && scrollPosition > 30 ? "on" : ""}
+      className={pathname !== "/career" && scrollPosition > 30 ? "white" : ""}
     >
       <div className="header">
         <div className="header-wrap">

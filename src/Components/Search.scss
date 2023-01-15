@@ -1,21 +1,44 @@
+@import "../style/variables";
+
 div.search {
 
   form.search-form {
     position: relative;
     border-bottom: 1px solid #b0b8c1;
+    margin-bottom: 72px;
+    @include mobile {
+      margin-bottom: 48px;
+    }
 
     span.search-form-img {
       position: absolute;
       left: 0;
       top: 8px;
+      @include mobile {
+        left: 0;
+        top: 4px;
+      }
+      
+      img {
+        @include mobile {
+          width: 16px;
+          height: 16px;
+        }
+      }
     }
     
     input.search-form-input {
       line-height: 1.3;
       padding: 0 0 16px 46px;
-      font-size: 2rem;
+      font-size: 32px;
       width: 100%;
       border: none;
+      caret-color: #3182f6;
+      outline: none;
+      @include mobile {
+        padding: 0 0 12px 26px;
+        font-size: 18px;
+      }
 
       &::placeholder {
         color:#b0b8c1;

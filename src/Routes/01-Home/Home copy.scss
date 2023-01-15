@@ -14,83 +14,84 @@
       url("../../../public/images/new_main.png") no-repeat center / cover;
 
     div.home-main-op {
+      opacity: 0;
       height: 100%;
+      transition: all 1.2s ease-out;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
-      opacity: 0;
-      transition: all 1.2s ease-out;
 
       &.on {
         opacity: 1;
       }
       
       div.home-main-op-top {
+        position: absolute;
         margin-top: 170px;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        div.home-main-op-tit {
-          text-align: center;
-          margin-bottom: 50px;
-          span {
-            display: block;
-            font-size: $h1;
-            font-weight: 700;
-            line-height: 1.5;
-          }
+      }
+      div.home-main-op-tit {
+        position: relative;
+        top: 19%;
+        text-align: center;
+        margin-bottom: 50px;
+        span {
+          display: block;
+          font-size: $h1;
+          font-weight: 700;
+          line-height: 1.5;
         }
-  
-        div.home-main-op-btn {
+      }
+
+      div.home-main-op-btn {
+        display: flex;
+        align-items: center;
+
+        a {
           display: flex;
           align-items: center;
-  
-          a {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            padding: 11px 22px;
-            background-color: rgba(0, 12, 30, 0.8);
-            font-size: 17px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #fff;
-            border-radius: 7px;
-            margin-right: 4px;
-            transition: opacity 0.2s ease;
-            &:hover {
-              opacity: 0.8;
-            }
+          cursor: pointer;
+          padding: 11px 22px;
+          background-color: rgba(0, 12, 30, 0.8);
+          font-size: 17px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          color: #fff;
+          border-radius: 7px;
+          margin-right: 4px;
+          transition: opacity 0.2s ease;
+          &:hover {
+            opacity: 0.8;
+          }
 
-            img {
-              width: 24px;
-              height: 24px;
-              margin-right: 6px;
-            }
+          img {
+            width: 24px;
+            height: 24px;
+            margin-right: 6px;
           }
         }
       }
 
-      button.home-main-op-arrow {
-        margin-bottom: 50px;
-        
-        img {
-          width: 50px;
-          height: 50px;
-          animation: upMotion 0.8s ease-in-out infinite alternate;
-          }
+      svg.home-main-op-arrow {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        fill: #aaa;
+        animation: upMotion 0.8s ease-in-out infinite alternate;
+        // animation: fadeInOut 0.8s ease-out
+        // infinite alternate;
       }
     }
   }
   @keyframes upMotion {
     from {
-      transform: translateY(20px);
+      bottom: 7%;
       opacity: 0;
     }
     to {
-      transform: translateY(0px);
+      bottom: 6%;
       opacity: 1;
     }
   }

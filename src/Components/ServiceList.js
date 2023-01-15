@@ -1,8 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import React from "react";
-import "./ServiceList.scss";
 import serviceData from "@assets/serviceData";
 import PropTypes from "prop-types";
+import "./ServiceList.scss";
 
 const ServiceList = React.forwardRef(({ className }, ref) => {
   const serviceList = serviceData.map((list) => {

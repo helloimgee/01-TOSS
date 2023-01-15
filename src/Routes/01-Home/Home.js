@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable import/no-unresolved */
 import React, { useEffect, useRef, useState } from "react";
 import ServiceList from "@components/ServiceList";
@@ -49,42 +50,32 @@ export default function Home() {
     );
   };
   window.addEventListener("scroll", elementInView);
-  // console.log(scrollPosition2);
-
-  // const handleScroll = useCallback(() => {
-  //   const { current } = upScrollRef;
-  //   if (elementInView) {
-  //     current.style.transitionProperty = "opacity transform";
-  //     current.style.transitionDuration = "1s";
-  //     current.style.transitionTimingFunction = "cubic-bezier(0,0,0.2,1)";
-  //     current.style.transitionDelay = "0s";
-  //     current.style.opacity = 1;
-  //     current.style.transform = "translate3d(0,0,0)";
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [handleScroll]);
 
   return (
     <div className="home">
       {/* main */}
       <main className="home-main">
         <div className={`home-main-op${Load ? " on" : ""}`}>
-          <div className="home-main-op-tit">
-            <span>금융의 모든 것</span>
-            <span>토스에서 쉽고 간편하게</span>
+          <div className="home-main-op-top">
+            <div className="home-main-op-tit">
+              <span>금융의 모든 것</span>
+              <span>토스에서 쉽고 간편하게</span>
+            </div>
+            <div className="home-main-op-btn">
+              <a href="https://itunes.apple.com/kr/app/%ED%86%A0%EC%8A%A4/id839333328?mt=8">
+                App Store
+                <img src="/images/home-main-appstore.png" alt="" />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=viva.republica.toss">
+                <img src="/images/home-main-googleplay.png" alt="" />
+                Google Play
+              </a>
+            </div>
           </div>
-          {/* <ArrowIcon
-            clname="home-main-op-arrow"
-            color="#fff"
-            onClick={scroll}
-          /> */}
-          <svg
+          <button type="button" className="home-main-op-arrow" onClick={scroll}>
+            <img src="/images/icn-arrow.svg" alt="화살표" />
+          </button>
+          {/* <svg
             className="home-main-op-arrow"
             onClick={scroll}
             xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +84,7 @@ export default function Home() {
             viewBox="0 0 24 24"
           >
             <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-          </svg>
+          </svg> */}
         </div>
       </main>
       {/* section-01 */}
@@ -132,9 +123,33 @@ export default function Home() {
       {/* section-03 */}
       <section className="home-section-03">
         <div className="home-section-03-wrap">
-          <span>꼭 필요했던 금융</span>
-          <div className="home-section-03-left" />
-          <div className="home-section-03-right" />
+          <span>
+            꼭 필요했던 <br /> 금융
+          </span>
+          <div
+            className="home-section-03-left"
+            style={{
+              transform: `translateX(${
+                scrollPosition < 3222
+                  ? 0
+                  : scrollPosition > 3222 && scrollPosition < 4124
+                  ? 0 - (window.scrollY - 3222) * 0.1
+                  : -100
+              }%)`,
+            }}
+          />
+          <div
+            className="home-section-03-right"
+            style={{
+              transform: `translate(${
+                scrollPosition < 3222
+                  ? 0
+                  : scrollPosition > 3222 && scrollPosition < 4124
+                  ? 0 + (window.scrollY - 3222) * 0.1
+                  : 100
+              }%)`,
+            }}
+          />
         </div>
       </section>
     </div>

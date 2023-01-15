@@ -1,12 +1,21 @@
 @import "../../style/variables";
 
-div.support-main {
-  background-color: #eef6f3;
+div.support {
   width: 100vw;
+  background-color: #eef6f3;
+}
+
+div.support-main {
+  width: 92%;
+  max-width: calc(100% - 48px);
   min-height: 920px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mobile {
+    min-height: 556px;
+  }
 
   div.support-main-cont {
     display: flex;
@@ -14,13 +23,17 @@ div.support-main {
     align-items: center;
 
     p.supprot-main-cont-tit {
-      font-size: $h2;
+      font-size: 56px;
       margin-top: 136px;
       margin-bottom: 40px;
       color: #333d4b;
       font-weight: bold;
       line-height: 130%;
       text-align: center;
+      @include mobile { 
+        font-size: 32px;
+        margin-bottom : 32px;
+      }
     }
 
     div.support-main-cont-phon {
@@ -28,6 +41,10 @@ div.support-main {
       gap: 0 50px;
       margin-bottom: 35px;
       height: 64.5px;
+    
+      @include mobile {
+        display: none;
+      }
 
       &.phon01, &.phon02 {
         display: flex;
@@ -39,11 +56,11 @@ div.support-main {
         color: #333d4bB3;
 
         span:nth-child(1) {
-          font-size: 1.06rem;
+          font-size: 17px;
           margin-bottom: 10px;
         }
         span:nth-child(2) {
-          font-size: 1.6rem;
+          font-size: 26px;
           font-weight: 700;
         }
       }
@@ -57,6 +74,9 @@ div.support-main {
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 18px;
+      line-height: 150%;
+      color: rgba(3, 18, 40, 0.7);
 
       span:nth-child(1) {
         margin-right: 6px;
