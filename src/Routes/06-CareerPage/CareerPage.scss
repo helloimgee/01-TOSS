@@ -87,18 +87,20 @@
   }
 
   // section 01
-.careerPage-section {
-  height: 7240px;
-}
+  .careerPage-section {
+    height: 7240px;
+  }
   .careerPage-section-01 {
     max-width: 1140px;
-    min-width: 1020px;
     margin: 0 auto;
+
     .careerPage-section-01-wrap {
       max-width: 960px;
+      width: 92%;
       margin: 0 auto;
 
       .careerPage-section-01-tit {
+        margin: 0 auto;
         p:nth-of-type(1) {
           font-size: 46px;
           font-weight: 700;
@@ -116,7 +118,7 @@
           line-height: 29px;
           margin-bottom: 32px;
           color: rgb(107, 118, 132);
-          @include mobile { 
+          @include mobile {
             font-size: 15px;
             line-height: 24px;
           }

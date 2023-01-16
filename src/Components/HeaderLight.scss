@@ -1,6 +1,7 @@
 @import "../style/variables";
 
 // 레이아웃
+
 div.headerLight {
   width: calc(100vw);
   height: 60px;
@@ -11,9 +12,9 @@ div.headerLight {
     height: 61px;
     background-color: #fff;
     border-bottom: 1px solid rgba(0, 27, 55, 0.1);
-  &.clickedHb {
-    background-color: #fff;
   }
+  &.hamburgerBg {
+    background-color: #fff;
   }
 
   div.header-wrap {
@@ -35,7 +36,7 @@ div.headerLight {
       }
     }
 
-   // pc버전
+    // pc버전
     div.header-menu-pc {
       display: flex;
 
@@ -119,44 +120,43 @@ div.headerLight {
       }
     }
 
-      div.hamburger-menu {
-        width: 100vw;
-        position: absolute;
-        top: 60px;
-        left: 0px;
-  
-        div.hamburger-menu-lists {
-          color: #4e5968;
-          font-weight: 500;
-          line-height: 20px;
-  
-          a {
-            text-align: left;
-            display: block;
-            padding: 18px 24px;
-            font-size: 15px;
-            background-color: #f3f4f5;
-            &:hover {
-              background-color: #e7e9ec;
-            }
+    div.hamburger-menu {
+      width: 100vw;
+      position: absolute;
+      top: 60px;
+      left: 0px;
+
+      div.hamburger-menu-lists {
+        color: #4e5968;
+        font-weight: 500;
+        line-height: 20px;
+
+        a {
+          text-align: left;
+          display: block;
+          padding: 18px 24px;
+          font-size: 15px;
+          background-color: #f3f4f5;
+          &:hover {
+            background-color: #e7e9ec;
           }
-          div.header-translate {
-            background-color: #f3f4f5;
-            display: flex;
-            align-items: center;
-  
-            div.line {
-              width: 2px;
-              height: 16px;
-              background-color: #d1d6db;
-            }
-  
-            span.eng {
-              color: #b0b8c1;
-            }
+        }
+        div.header-translate {
+          background-color: #f3f4f5;
+          display: flex;
+          align-items: center;
+
+          div.line {
+            width: 2px;
+            height: 16px;
+            background-color: #d1d6db;
+          }
+
+          span.eng {
+            color: #b0b8c1;
           }
         }
       }
     }
-
   }
+}

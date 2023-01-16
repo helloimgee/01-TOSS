@@ -22,7 +22,7 @@ export default function headerDark() {
     <div
       className={`headerDark ${
         scrollPosition > 30 && pathname !== "/career" ? "headerBg" : ""
-      }`}
+      } ${isClicked === false ? "hamburgerBg" : ""}`}
     >
       <div className="header-wrap">
         <div className="header-logo">

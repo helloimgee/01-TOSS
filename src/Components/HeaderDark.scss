@@ -12,6 +12,9 @@ div.headerDark {
     background-color: #00000033;
     backdrop-filter: blur(30px);
   }
+  &.hamburgerBg {
+    background-color: #f2f4f6;
+  }
 
   div.header-wrap {
     max-width: 1048px;

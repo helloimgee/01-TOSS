@@ -1,11 +1,12 @@
 .hoverList {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
   .hoverList-wrap {
-    position: relative;
     flex-shrink: 0;
+    position: relative;
     width: 466px;
     height: 372.8px;
     margin: 14px 0;

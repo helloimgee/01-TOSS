@@ -21,7 +21,7 @@ export default function TeamPage() {
             변화를 열망하는 사람들이 모여, 역사에 남을만한 변화를 만듭니다.
           </span>
         </div>
-        <div className="teamPage-section-01-graph">
+        <div className="css-9hdmmd erw3eot0">
           <svg
             viewBox="0 0 500 500"
             xmlns="https://www.w3.org/2000/svg"

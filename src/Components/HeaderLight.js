@@ -28,9 +28,9 @@ export default function HeaderLight() {
 
   return (
     <div
-      className={`headerLight
-        ${scrollPosition > 30 ? "headerBg" : ""} 
-        ${isClicked === false ? "clickedHb" : ""}
+      className={`headerLight ${!isClicked ? "hamburgerBg" : ""} ${
+        scrollPosition > 30 ? "headerBg" : ""
+      } 
       `}
     >
       <div className="header-wrap">

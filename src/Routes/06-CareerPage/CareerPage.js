@@ -1,11 +1,12 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
 import HoverList from "../../components/HoverList";
 import careerList01 from "../../assets/careerList01";
-import Slide01 from "../../components/Slide01";
+import Slide03 from "../../components/Slide03";
+import Slide04 from "../../components/Slide04";
 import "./CareerPage.scss";
-// import careerList02 from "../../assets/careerList02";
 
 export default function CareerPage() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -152,21 +153,8 @@ export default function CareerPage() {
             <HoverList dataAsset={data1} />
           </div>
         </div>
-        <Slide01 />
-        {/* section 02 */}
-        {/* <div className="careerPage-section-02">
-          <div className="careerPage-section-02-wrap">
-            <div className="careerPage-section-02-tit">
-              <p>누구나 가진 몰입의 힘을 믿습니다</p>
-              <p>
-                만약 누군가의 몰입이 없었다면, 모두를 위한 새로운 혁신은 없었을
-                것입니다. <br />
-                토스커뮤니티에서는 누구나 각자의 방식으로 몰입할 수 있습니다
-              </p>
-            </div>
-            <HoverList dataAsset={data2} />
-          </div>
-        </div> */}
+        <Slide03 />
+        <Slide04 />
       </div>
     </div>
   );
