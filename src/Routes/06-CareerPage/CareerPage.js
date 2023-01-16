@@ -2,6 +2,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import HoverList from "../../components/HoverList";
 import careerList01 from "../../assets/careerList01";
 import Slide03 from "../../components/Slide03";
@@ -153,9 +154,21 @@ export default function CareerPage() {
             <HoverList dataAsset={data1} />
           </div>
         </div>
+        <BlankSpace width="100%" height="56px" />
         <Slide03 />
+        <div className="careerPage-section-02">
+          <p>토스커뮤니티 복지 자세히 보기</p>
+        </div>
         <Slide04 />
       </div>
     </div>
   );
 }
+
+const BlankSpace = styled.div`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  @media screen and (max-width: 640px) {
+    height: ${(props) => props.height * 0.7};
+  }
+`;

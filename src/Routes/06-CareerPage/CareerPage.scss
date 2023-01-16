@@ -126,4 +126,20 @@
       }
     }
   }
+
+  // section 02
+  div.careerPage-section-02 {
+    max-width: 1140px;
+    margin: 0 auto;
+
+    p {
+      margin-top: 100px;
+      font-size: 32px;
+      font-weight: 700;
+      @media mobile {
+        margin-top: 26px;
+        font-size: 26px;
+      }
+    }
+  }
 }
