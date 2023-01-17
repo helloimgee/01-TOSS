@@ -8,8 +8,8 @@ export default function InfiniteSlide() {
     return (
       <li
         className="list"
-        style={{ backgroundColor: `${list.color}` }}
         key={list.id}
+        style={{ backgroundColor: `${list.color}` }}
       >
         <img src={list.img} alt={list.id} />
       </li>

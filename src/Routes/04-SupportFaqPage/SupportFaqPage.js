@@ -7,14 +7,24 @@ import faqList from "../../assets/faqList";
 import "./SupportFaqPage.scss";
 
 export default function SupportFaqPage() {
-  const useQuery = () => new URLSearchParams(useLocation().search);
-  const query = useQuery();
-  // console.log(query.get("category"));
-  // console.log(query);
-  // console.log(faqList[query.get("category")]);
+  /* 
+  1-1. useQuery 커스텀 메서드 생성
+  = URLSearchParams(Query String) 객체 생성하는 함수
+  = useLocation().search = Query String
+  (1) useLocation(): 현재 URL의 정보를 담은 객체 반환{pathname, search, hash, state, key 속성} 
+  (2) useLocation().search : Query String값
+  */
+  const makeSearchParams = () => new URLSearchParams(useLocation().search);
 
-  const index = faqList[query.get("category")] || [];
-  // console.log(index); // top10, send, account, card, pay, invest ...;
+  /* 1-2. useQuery() 커스텀 메서드를 -> 변수에 저장 */
+  const madeSeachParams = makeSearchParams();
+
+  /* 1-3. faqList 객체에서 [속성]의 값(배열) 가져오기
+  (1) useQuery() 메서드를 실행해 만든 객체에서 get() 메서드 실행 
+  = Query String에서 key값이 "categroy"일 때 value값 구하기 혹은 빈배열
+  */
+  const index = faqList[madeSeachParams.get("category")] || [];
+  // console.log(index) = top10, send, account, card, pay, invest ...;
 
   return (
     <div className="supportFaqPage">

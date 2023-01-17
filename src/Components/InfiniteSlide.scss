@@ -2,23 +2,20 @@
 
 div.roller {
   ul {
-    display: flex;
-    overflow: hidden;
+    display: flex; // 리스트들을 옆으로 나열
+    overflow: hidden; // 뷰포트 밖으로 넘치는 li들 안 보이게
   }
   li.list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+    flex-shrink: 0; // ul 너비에 맞춰 width 수축되지 않고 지정한 width 유지
     width: 130px;
     height: 130px;
     border-radius: 50%;
+    overflow: hidden; // li 속 img가 지정한 크기 넘어가지 않게 숨기기
+    display: flex; // li 속 img의 정렬 위한 flex
+    justify-content: center;
+    align-items: center;
     margin-right: 10px;
-    overflow: hidden;
-    animation-name: InfiniteSlide;
-    // animation-iteration-count: infinite;
-    // animation-duration: 4s;
-    animation: InfiniteSlide 60s linear infinite;
+    animation: InfiniteSlide 60s linear infinite; // 3350px 왼쪽으로 이동하는 한 사이클이 60초 동안 일정한 속도로 무한 반복
     @include mobile {
       width: 80px;
       height: 80px;
@@ -35,10 +32,10 @@ div.roller {
 
 @keyframes InfiniteSlide {
   from {
-    transform: translateX(0);
+    transform: translateX(0); // 제자리에서
   }
   to {
-    transform: translateX(calc(-3350px + 100vw));
+    transform: translateX(calc(-3350px + 100vw)); // 왼쪽으로 3350px 이동(뷰포트 바깥까지)
   }
   // 100% {
   //   transform: translateX(-200%);

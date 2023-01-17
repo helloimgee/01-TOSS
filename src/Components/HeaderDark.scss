@@ -9,7 +9,7 @@ div.headerDark {
   z-index: 5;
   &.headerBg {
     height: 61px;
-    background-color: #00000033;
+    background-color: rgb(0,0,0,0.2);
     backdrop-filter: blur(30px);
   }
   &.hamburgerBg {

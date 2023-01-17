@@ -16,7 +16,7 @@ export default function SupportPage() {
               <span>피해 사기 상담</span>
               <span>1661-4905</span>
             </div>
-            <DivisionLine size="large" color="#333d4b1A" />
+            <DivisionLine size="100%" color="#333d4b1A" />
             <div className="support-main-cont-phon phon02">
               <span>일반 상담</span>
               <span>1599-4905</span>

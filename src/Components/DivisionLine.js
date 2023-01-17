@@ -1,21 +1,26 @@
 import React from "react";
-import "./DivisionLine.scss";
 import PropTypes from "prop-types";
 
-export default function DivisionLine({ size, color }) {
+export default function DivisionLine({ width, height, color }) {
   return (
     <div
-      className={`divisionLine ${size}`}
-      style={{ backgroundColor: `${color}` }}
+      className="divisionLine"
+      style={{
+        backgroundColor: `${color}`,
+        width: `${width}`,
+        height: `${height}`,
+      }}
     />
   );
 }
 
 DivisionLine.propTypes = {
-  size: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
   color: PropTypes.string,
 };
 DivisionLine.defaultProps = {
-  size: "medium",
+  width: "1px",
+  height: "100%",
   color: "#000",
 };

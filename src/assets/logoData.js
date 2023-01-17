@@ -1,4 +1,4 @@
-const imgData = [
+const logoData = [
   {
     id: 1,
     color: "#e54d5b",
@@ -121,4 +121,4 @@ const imgData = [
   },
 ];
 
-export default imgData;
+export default logoData;

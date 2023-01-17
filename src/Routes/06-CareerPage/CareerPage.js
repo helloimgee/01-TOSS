@@ -10,6 +10,7 @@ import Slide04 from "../../components/Slide04";
 import "./CareerPage.scss";
 
 export default function CareerPage() {
+  // 1. 브라우저창을 스크롤할 때마다 스크롤 위치를 update해주기
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const updateScroll = () => {
@@ -22,8 +23,8 @@ export default function CareerPage() {
     };
   }, []);
 
+  // HoverList에 List 넘기기 위한 변수 설정
   const data1 = careerList01;
-  // const data2 = careerList02;
 
   return (
     <div className="careerPage">
