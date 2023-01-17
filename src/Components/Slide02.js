@@ -1,62 +1,68 @@
 import React, { useState } from "react";
-import careerMembers from "../assets/careerMembers";
+import welfareList from "../assets/welfareList";
 import "./Slide02.scss";
 
-export default function Slide02() {
+export default function Slide03() {
   const [slidePx, setSlidePx] = useState(0);
+  console.log(slidePx);
 
   const toPrev = () => {
     if (slidePx < 0) {
-      // 한 번이라도 왼쪽으로 이동(-1375)된 상태일 때(next버튼)
-      // 한 번 넘겨졌을 때 필요(그전에는 비활성화)
-      setSlidePx(slidePx + 1375);
+      // 한 번이라도 next 버튼 눌렀으면 -> prev 버튼으로 이전으로 돌아갈 수 있다
+      setSlidePx(slidePx + 357);
+      console.log(slidePx);
     }
   };
 
   const toNext = () => {
-    if (slidePx > -2750) {
-      // -2750 : 왼쪽으로 2번 이동된 상태(next버튼 2번 누른 상태)
-      // 왼쪽으로 다 와 버린 상태가 아닐 때 -> next 버튼 누르면 왼쪽으로 이동
-      setSlidePx(slidePx - 1375);
+    if (slidePx > -357 * 3) {
+      // next 다 해버린 상태가 아니면 -> next 버튼으로 다음 걸로 넘길 수 있다
+      setSlidePx(slidePx - 357);
+      console.log(slidePx);
     }
   };
 
   return (
-    <div className="slide02">
-      <div className="slide02-wrap">
-        <ul>
-          {careerMembers.map((mem) => (
-            <li
-              className="slide02-slideList"
-              key={mem.id}
-              style={{ transform: `translateX(${slidePx}px)` }}
-            >
-              <div>
-                <img src={mem.img} alt={mem.alt} />
-                <p>{mem.des}</p>
-                <p>{mem.who}</p>
+    <div className="padding-left">
+      <div className="slick-slider02">
+        <div className="slick-list">
+          <div
+            className="slick-track"
+            style={{
+              transform: `translateX(${slidePx}px)`,
+              transition: "all 0.5s",
+            }}
+          >
+            {welfareList.map((welfare) => (
+              <div className="slick-slide" id={welfare.id}>
+                <div>
+                  <div className="slick-slide-content">
+                    <div className="slick-slide-content-inner">
+                      <img src={welfare.img} alt={welfare.alt} />
+                      <p>{welfare.des}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div
-        className="prevBtn slideBtn"
-        onClick={toPrev}
-        role="button"
-        aria-hidden
-        style={{ display: slidePx === 0 ? "" : "" }}
-      >
-        <img src="/images/slide01-arrow.png" alt="왼쪽 화살표" />
-      </div>
-      <div
-        className="nextBtn slideBtn"
-        onClick={toNext}
-        role="button"
-        aria-hidden
-        style={{ display: slidePx === 2750 ? "none" : "" }}
-      >
-        <img src="/images/slide01-arrow.png" alt="오른쪽 화살표" />
+            ))}
+          </div>
+        </div>
+        <div
+          className={`prevBtn slideBtn ${slidePx === 0 ? "disabled" : ""}`}
+          onClick={toPrev}
+          role="button"
+          aria-hidden
+        >
+          <img src="/images/slide01-arrow.png" alt="왼쪽 화살표" />
+        </div>
+        <div
+          className={`nextBtn slideBtn ${slidePx === -1071 ? "disabled" : ""}`}
+          onClick={toNext}
+          role="button"
+          aria-hidden
+        >
+          <img src="/images/slide01-arrow.png" alt="오른쪽 화살표" />
+        </div>
       </div>
     </div>
   );

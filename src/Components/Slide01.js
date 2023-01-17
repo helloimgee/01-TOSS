@@ -1,41 +1,73 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
+import careerMembers from "../assets/careerMembers";
 import "./Slide01.scss";
 
 export default function Slide01() {
+  /* slide 되는 px수를 저장하고 수정하기 위한 state (초기값 0px) */
   const [slidePx, setSlidePx] = useState(0);
 
-  const itemRef = useRef(null);
-
-  const rightSlide = () => {
-    itemRef.current.style.transform = `trasnlateX(-1139px)`;
+  //
+  /* (1) 한 번이라도 next 버튼을 눌렀다면: prev 버튼을 누를 수 있다 
+  -> slidePx의 값 + 100vw(오른쪽으로 이동) */
+  const toPrev = () => {
+    if (slidePx < 0) {
+      setSlidePx(slidePx + 100);
+    }
+  };
+  /* (2) next 버튼을 다 누르지 않았다면: next 버튼을 누를 수 있다
+  -> slidePx의 값 - 100vw(왼쪽으로 이동) */
+  const toNext = () => {
+    if (slidePx > -100 * 3) {
+      setSlidePx(slidePx - 100);
+    }
   };
 
   return (
-    <div className="slide01">
-      <div className="slide01-list">
-        <div className="slide01-lists-track" ref={itemRef}>
-          <div className="slide01-lists-track-left">
-            <img src="/images/slide01-arrow.png" alt="왼쪽 화살표" />
-          </div>
-          <div className="slide01-lists-track-item" ref={itemRef}>
-            <img src="/images/slide01-01.png" alt="슬라이드01" />
-            <p>
-              토스커뮤니티의 모든 분들이 느끼는 점일텐데요, 일에 방해되는
-              불필요한 절차나 형식적인 문화가 거의 없는 곳이 바로
-              토스커뮤니티입니다. 업무나 역할에 크게 제한이 없는 것 또한 큰
-              장점이라, 이런 환경 속에서 자신이 그려나가는 바를 마음껏 실현시켜
-              나가면 되는 문화예요.
-            </p>
-            <p>Head of Communications, 윤기열 님</p>
-          </div>
-          <div
-            className="slide01-lists-track-right"
-            onClick={rightSlide}
-            role="presentation"
-          >
-            <img src="/images/slide01-arrow.png" alt="오른쪽 화살표" />
-          </div>
+    <div className="slick-slider01">
+      <div className="slick-list">
+        {/* 버튼 클릭 -> slidePx값 변경 -> 요소가 그 값만큼 x축으로 이동 */}
+        <div
+          className="slick-track"
+          style={{
+            transform: `translateX(${slidePx}vw)`,
+            transition: "all 0.5s",
+          }}
+        >
+          {/* map 통한 리스트 렌더링 */}
+          {careerMembers.map((mem) => (
+            <div className="slick-slide" id={mem.id}>
+              <div>
+                <div className="slick-slide-content">
+                  <div className="slick-slide-content-inner">
+                    <img src={mem.img} alt={mem.alt} />
+                    <p>{mem.des}</p>
+                    <p>{mem.who}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
+      {/* (1) 0px일 때 prev 버튼 비활성화 
+      (2) 클릭시 toPrev 메서드 실행 */}
+      <div
+        className={`prevBtn slideBtn ${slidePx === 0 ? "disabled" : ""}`}
+        onClick={toPrev}
+        role="button"
+        aria-hidden
+      >
+        <img src="/images/slide01-arrow.png" alt="왼쪽 화살표" />
+      </div>
+      {/* (1) next 버튼 다 눌렀을 때 next 버튼 비활성화 
+      (2) 클릭시 toNext 메서드 실행 */}
+      <div
+        className={`nextBtn slideBtn ${slidePx === -300 ? "disabled" : ""}`}
+        onClick={toNext}
+        role="button"
+        aria-hidden
+      >
+        <img src="/images/slide01-arrow.png" alt="오른쪽 화살표" />
       </div>
     </div>
   );

@@ -4,10 +4,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import HoverList from "../../components/HoverList";
+import Slide04 from "../../components/Slide02";
 import careerList01 from "../../assets/careerList01";
-import Slide03 from "../../components/Slide03";
-import Slide04 from "../../components/Slide04";
 import "./CareerPage.scss";
+import Slide01 from "../../components/Slide01";
 
 export default function CareerPage() {
   // 1. 브라우저창을 스크롤할 때마다 스크롤 위치를 update해주기
@@ -24,7 +24,6 @@ export default function CareerPage() {
   }, []);
 
   // HoverList에 List 넘기기 위한 변수 설정
-  const data1 = careerList01;
 
   return (
     <div className="careerPage">
@@ -152,11 +151,11 @@ export default function CareerPage() {
                 토스커뮤니티에서는 누구나 각자의 방식으로 몰입할 수 있습니다
               </p>
             </div>
-            <HoverList dataAsset={data1} />
+            <HoverList dataAsset={careerList01} />
           </div>
         </div>
         <BlankSpace width="100%" height="56px" />
-        <Slide03 />
+        <Slide01 />
         <div className="careerPage-section-02">
           <p>토스커뮤니티 복지 자세히 보기</p>
         </div>

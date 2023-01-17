@@ -1,4 +1,4 @@
-div.slick-slider03 {
+div.slick-slider {
   position: relative;
   background-color: rgb(242, 244, 246);
 
@@ -100,18 +100,10 @@ div.slick-slider03 {
     left: 10%;
     top: 50%;
     transform: translateY(-50%) rotate(180deg);
-    &.disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
   }
   div.nextBtn {
     right: 10%;
     top: 50%;
     transform: translateY(-50%);
-    &.disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
   }
 }
