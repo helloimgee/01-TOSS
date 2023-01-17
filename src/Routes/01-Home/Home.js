@@ -1,8 +1,8 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable import/no-unresolved */
 import React, { useEffect, useRef, useState } from "react";
-import ServiceList from "@components/ServiceList";
-import InfiniteSlide from "@components/InfiniteSlide";
+import InfiniteSlide from "../../components/InfiniteSlide";
+import ServiceList from "../../components/ServiceList";
 import "./Home.scss";
 // import ArrowIcon from "@components/Arrow";
 

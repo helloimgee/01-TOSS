@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from "react";
-import serviceData from "@assets/serviceData";
 import PropTypes from "prop-types";
+import serviceData from "../assets/serviceData";
 import "./ServiceList.scss";
 
 const ServiceList = React.forwardRef(({ className }, ref) => {

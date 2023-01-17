@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from "react";
-import logoData from "@assets/logoData";
+import logoData from "../assets/logoData";
 import "./InfiniteSlide.scss";
 
 export default function InfiniteSlide() {
