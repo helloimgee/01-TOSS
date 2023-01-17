@@ -33,14 +33,18 @@ export default function Home() {
     });
   };
 
-  // div 뷰포트 안에 들어오면 스크롤 이벤트 실행
-  const upScrollRef = useRef(null);
-  const [scrollPosition2, setScrollPosition2] = useState(false);
-
+  // 3. 특정 컴포넌트가 뷰포트 안에 들어오면 스크롤 이벤트 실행
+  /* 3-1. 검사할 특정 컴포넌트를 참조 */
+  const inViewRef = useRef(null);
+  /* 3-2. 특정 컴포넌트가 뷰포트 안에 들어오는지 여부를 변수에 저장 */
+  const [isInView, setIsInView] = useState(false);
+  /* 3-3. 커스텀 메서드 정의
+= 특정 컴포넌트 ~ 브라우저 상단 사이의 거리가 < 브라우저 내부 높이보다 작은지 여부를 isInView 변수에 저장
+*/
   const elementInView = () => {
-    if (!upScrollRef) return;
-    const elementTop = upScrollRef.current.getBoundingClientRect().top;
-    setScrollPosition2(
+    if (!inViewRef) return;
+    const elementTop = inViewRef.current.getBoundingClientRect().top;
+    setIsInView(
       elementTop <=
         (window.innerHeight || document.documentElement.clientHeight)
     );
@@ -71,7 +75,6 @@ export default function Home() {
       window.removeEventListener("scr0ll", updateScroll);
     };
   }, []);
-  // console.log(scrollPosition);
 
   return (
     <div className="home">
@@ -113,10 +116,7 @@ export default function Home() {
               <span>한번 써보세요</span>
             </div>
             {/* <ServiceList /> */}
-            <ServiceList
-              className={scrollPosition2 ? "on" : ""}
-              ref={upScrollRef}
-            />
+            <ServiceList className={isInView ? "on" : ""} ref={inViewRef} />
           </div>
         </div>
       </section>

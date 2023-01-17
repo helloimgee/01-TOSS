@@ -4,10 +4,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import HoverList from "../../components/HoverList";
-import Slide04 from "../../components/Slide02";
 import careerList01 from "../../assets/careerList01";
-import "./CareerPage.scss";
 import Slide01 from "../../components/Slide01";
+import Slide02 from "../../components/Slide02";
+import "./CareerPage.scss";
 
 export default function CareerPage() {
   // 1. 브라우저창을 스크롤할 때마다 스크롤 위치를 update해주기
@@ -159,7 +159,7 @@ export default function CareerPage() {
         <div className="careerPage-section-02">
           <p>토스커뮤니티 복지 자세히 보기</p>
         </div>
-        <Slide04 />
+        <Slide02 />
       </div>
     </div>
   );
