@@ -88,17 +88,26 @@ export default function Home() {
             </div>
             <div className="home-main-op-btn">
               <a href="https://itunes.apple.com/kr/app/%ED%86%A0%EC%8A%A4/id839333328?mt=8">
-                <img src="/images/home-main-appstore.png" alt="앱스토어" />
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/home-main-appstore.png`}
+                  alt="앱스토어"
+                />
                 App Store
               </a>
               <a href="https://play.google.com/store/apps/details?id=viva.republica.toss">
-                <img src="/images/home-main-googleplay.png" alt="구글플레이" />
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/home-main-googleplay.png`}
+                  alt="구글플레이"
+                />
                 Google Play
               </a>
             </div>
           </div>
           <button type="button" className="home-main-op-arrow" onClick={scroll}>
-            <img src="/images/icn-arrow.svg" alt="화살표" />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/icn-arrow.svg`}
+              alt="화살표"
+            />
           </button>
         </div>
       </main>

@@ -86,27 +86,42 @@ export default function Footer() {
         <ul className="footerWrap-sns">
           <li>
             <a href="https://www.facebook.com/toss.revolution">
-              <img src="/images/icn-facebook.svg" alt="페이스북" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icn-facebook.svg`}
+                alt="페이스북"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/toss.revolution">
-              <img src="/images/icn-blog.svg" alt="블로그" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icn-blog.svg`}
+                alt="블로그"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/toss.revolution">
-              <img src="/images/icn-naver.svg" alt="네이버" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icn-naver.svg`}
+                alt="네이버"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/toss.revolution">
-              <img src="/images/icn-twitter.svg" alt="트위터" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icn-twitter.svg`}
+                alt="트위터"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/toss.revolution">
-              <img src="/images/icn-instagram.svg" alt="인스타그램" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icn-instagram.svg`}
+                alt="인스타그램"
+              />
             </a>
           </li>
         </ul>

@@ -36,7 +36,10 @@ export default function HeaderLight() {
       <div className="header-wrap">
         <div className="header-logo">
           <Link to="/">
-            <img src="/images/logo.png" alt="logo2" />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/logo.png`}
+              alt="logo2"
+            />
           </Link>
         </div>
         {/* 피씨 */}
@@ -82,14 +85,14 @@ export default function HeaderLight() {
             {isClicked ? (
               <img
                 className="hamburger-before"
-                src="/images/hamburger-black.svg"
+                src={`${process.env.PUBLIC_URL}/images/hamburger-black.svg`}
                 alt="before"
               />
             ) : (
               <div className="header-menu-mobile-open">
                 <img
                   className="hamburger-after"
-                  src="/images/hamburger-x.svg"
+                  src={`${process.env.PUBLIC_URL}/images/hamburger-x.svg`}
                   alt="after"
                 />
                 <div className="hamburger-menu">

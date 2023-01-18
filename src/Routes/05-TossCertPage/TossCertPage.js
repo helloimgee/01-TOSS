@@ -23,7 +23,10 @@ export default function TossCertPage() {
             </div>
           </div>
           <div className="tossCertPage main-cont-img">
-            <img src="/images/tossCertPage-main.png" alt="tossCertPage" />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/tossCertPage-main.png`}
+              alt="tossCertPage"
+            />
           </div>
         </div>
       </div>

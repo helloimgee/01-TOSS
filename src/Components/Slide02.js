@@ -4,13 +4,11 @@ import "./Slide02.scss";
 
 export default function Slide03() {
   const [slidePx, setSlidePx] = useState(0);
-  console.log(slidePx);
 
   const toPrev = () => {
     if (slidePx < 0) {
       // 한 번이라도 next 버튼 눌렀으면 -> prev 버튼으로 이전으로 돌아갈 수 있다
       setSlidePx(slidePx + 357);
-      console.log(slidePx);
     }
   };
 
@@ -18,7 +16,6 @@ export default function Slide03() {
     if (slidePx > -357 * 3) {
       // next 다 해버린 상태가 아니면 -> next 버튼으로 다음 걸로 넘길 수 있다
       setSlidePx(slidePx - 357);
-      console.log(slidePx);
     }
   };
 
@@ -53,7 +50,10 @@ export default function Slide03() {
           role="button"
           aria-hidden
         >
-          <img src="/images/slide01-arrow.png" alt="왼쪽 화살표" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/slide01-arrow.png`}
+            alt="왼쪽화살표"
+          />
         </div>
         <div
           className={`nextBtn slideBtn ${slidePx === -1071 ? "disabled" : ""}`}
@@ -61,7 +61,10 @@ export default function Slide03() {
           role="button"
           aria-hidden
         >
-          <img src="/images/slide01-arrow.png" alt="오른쪽 화살표" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/slide01-arrow.png`}
+            alt="오른쪽화살표"
+          />
         </div>
       </div>
     </div>

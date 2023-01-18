@@ -6,7 +6,10 @@ export default function Search() {
     <div className="search">
       <form className="search-form">
         <span className="search-form-img">
-          <img src="/images/search.svg" alt="검색창" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/search.svg`}
+            alt="검색창"
+          />
         </span>
         <input
           className="search-form-input"

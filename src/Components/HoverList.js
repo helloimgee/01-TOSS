@@ -67,7 +67,10 @@ export default function HoverList({ dataAsset }) {
                   isHover === idx ? "hover" : ""
                 }`}
               >
-                <img src="/images/careerPage-plus.svg" alt="플러스버튼" />
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/careerPage-plus.svg`}
+                  alt="플러스버튼"
+                />
               </div>
               <p
                 className={`hoverList-li-txt-des ${
