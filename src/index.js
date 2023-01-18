@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
+        index: true, // *처음 “/” 경로(index)일 때는 <Outlet>(children) 부분이 비어있기 때문에 그 부분에 띄워줄 컴포넌트를 지정해준다
         element: <Home />,
       },
       {

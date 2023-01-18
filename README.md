@@ -1,25 +1,22 @@
-# Getting Started with Create React App
+# TOSS CLONE PROJECT - 토스 클론 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+비바 리퍼블리카의 송금 서비스 앱 [토스]의 클론 프로젝트입니다. 
+기존 토스 홈페이지와 달리 리액트 라우터를 이용해 SPA 방식으로 구현하였고, 여러 동적 애니메이션을 재현하였습니다.
+기간은 약 3주 정도 소요되었고, 혼자 제작하였습니다. 
 
-## Available Scripts
+## 프로젝트 구성 기술 안내
 
-In the project directory, you can run:
+프론트엔드 UI: React, JavaScript, SCSS 
 
-### `npm start`
+## 프로젝트 기능 설명
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+react router, 스크롤 페이징, Query String 페이징, 생명주기 이벤트, 스크롤 이벤트, hover 이벤트, 반복 애니메이션, 슬라이드 등
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 느낀 점과 보완이 필요한 부분
 
-### `npm test`
+리액트를 공부했지만 실제로는 어떻게 사용해야 할지 감을 잘 잡지 못하고 있었는데, 직접 프로젝트를 만들어보면서 리액트와 많이 친해진 것을 느꼈다. 아직 100% 다 구현하지 못했고 코드도 깔끔하게 짜지 못한 것 같아서 아쉬움이 남지만 재미 있었고 많은 공부가 되었다. 리액트의 강점이 재사용 가능한 컴포넌트를 만들 수 있다는 것인데, 아직 그 강점을 잘 활용하지 못하고 있는 것 같다. 조건부 렌더링을 줄 때 백틱과 달러, 단위의 사용 역시 아직 헷갈린다. 레이아웃 잡는 것이나, 반응형도 열심히 공부해야겠다. 다음 프로젝트 때는 더욱 더 발전한 나를 기대해본다!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+<!-- ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -67,4 +64,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
