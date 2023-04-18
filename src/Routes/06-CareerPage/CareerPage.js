@@ -23,8 +23,6 @@ export default function CareerPage() {
     };
   }, []);
 
-  // HoverList에 List 넘기기 위한 변수 설정
-
   return (
     <div className="careerPage">
       {/* main */}

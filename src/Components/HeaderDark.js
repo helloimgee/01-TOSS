@@ -4,27 +4,28 @@ import { Link, useResolvedPath } from "react-router-dom";
 import "./HeaderDark.scss";
 
 export default function headerDark() {
-  // 1. 현재
-  /* 1-1. 현재 스크롤 위치를 저장하고 수정하기 위한 state 생성 */
-  const [scrollPosition, setScrollPosition] = useState(0);
-  /* 1-2. updateScroll 커스텀 메서드 생성
-  = 스크롤한 거리를 구한 후 -> scrollPosition의 값으로 수정해라 */
-  const updateScroll = () => {
-    setScrollPosition(window.pageYOffset || document.documentElement.scrollTop);
-  };
-  /* 1-3. 
-  (1) 초기 mount시 브라우저에 scroll 이벤트 핸들러 추가
-  = scroll 발생할 경우 위에서 만든 updateScroll 커스텀 메서드를 실행하라
-  (2) unmount시 브라우저에 scroll 이벤트 핸들러 삭제 */
   const { pathname } = useResolvedPath();
+  const [isClicked, setIsClicked] = useState(true);
+
+  /* 현재 스크롤 위치 */
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  /* 스크롤시 스크롤 거리 계산 */
+  // 1.
+  const updateScroll = () => {
+    setScrollPosition(
+      window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop
+    );
+  };
+  // 2.
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
     return () => {
       window.removeEventListener("scroll", updateScroll);
     };
   }, []);
-
-  const [isClicked, setIsClicked] = useState(true);
 
   return (
     <div

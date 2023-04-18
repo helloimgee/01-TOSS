@@ -11,6 +11,7 @@ import TossCertPage from "./routes/05-TossCertPage/TossCertPage";
 import CareerPage from "./routes/06-CareerPage/CareerPage";
 import ErrorPage from "./ErrorPage";
 import "./reset.scss";
+import ThemeProvider from "./context/ThemeProvider";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +55,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

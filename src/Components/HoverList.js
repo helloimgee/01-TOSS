@@ -26,7 +26,7 @@ export default function HoverList({ dataAsset }) {
       {data.map((list, idx) => {
         return (
           <div
-            className="hoverList-wrap"
+            className="hoverList-item"
             onMouseOver={() => {
               setHoverOn(idx);
             }}
@@ -42,7 +42,7 @@ export default function HoverList({ dataAsset }) {
             key={list.id}
           >
             <div
-              className={`hoverList-li ${isHover === idx ? "hover" : ""}`}
+              className={`hoverList-item-bg ${isHover === idx ? "hover" : ""}`}
               style={{
                 background: `url(${list.bg}) no-repeat center / cover`,
               }}

@@ -28,8 +28,8 @@ ArrowIcon.propTypes = {
   viewBox: PropTypes.string,
 };
 ArrowIcon.defaultProps = {
-  color: "#000",
   clname: "",
+  color: "#000",
   width: "30px",
   height: "30px",
   viewBox: "0 0 24 24",

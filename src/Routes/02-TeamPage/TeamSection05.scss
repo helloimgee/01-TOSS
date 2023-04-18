@@ -1,0 +1,145 @@
+@import "../../style//variables";
+
+.teamSection05 {
+  &-wrap {
+    max-width: 960px;
+    padding: 175px 0;
+    margin: 0 auto;
+    @media (max-width: 930px) {
+      max-width: 100%;
+      padding: 175px 20px;
+    }
+
+    &-title {
+      p:nth-of-type(1) {
+        font-size: 52px;
+        font-weight: 700;
+        margin-bottom: 13px;
+        text-align: center;
+      }
+      p:nth-of-type(2) {
+        font-size: 24px;
+        margin-bottom: 42px;
+        text-align: center;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &-item {
+        position: relative;
+        width: 458px;
+        height: 523px;
+        border-radius: 16px;
+        padding: 32px;
+        margin: 14px 0;
+        overflow: hidden;
+        @media (max-width: 930px) {
+          width: 100%;
+        }
+
+        &-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 16px;
+          z-index: -1;
+          &.on {
+            filter: blur(30px);
+            &::before {
+              position: absolute;
+              inset: 0px;
+              content: "";
+              background: rgba(255, 255, 255, 0.6);
+            }
+          }
+        }
+
+        // plus 버튼 누르기 전
+        &-cate {
+          position: relative;
+          display: block;
+          opacity: 1;
+          font-size: 15px;
+          margin-bottom: 8px;
+          transition: all 0.3s ease;
+          height: 24px;
+          z-index: 1;
+          &.on {
+            opacity: 0;
+            height: 0;
+          }
+        }
+        &-title {
+          position: relative;
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 41px;
+          margin-bottom: 20px;
+          transition: all 0.3s ease;
+          white-space: pre-wrap;
+          z-index: 2;
+          &.on {
+            font-size: 25px;
+            line-height: 33px;
+          }
+        }
+        &-plus {
+          display: block;
+          // opacity: 1;
+          height: 24px;
+          transition: all 0.3s ease;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          &.on {
+            width: 0;
+            height: 0;
+          }
+        }
+
+        // plus 버튼 누른 후
+        &-content {
+          opacity: 0;
+          font-size: 17px;
+          line-height: 1.5;
+          transition: all 0.3s;
+          white-space: pre-wrap;
+          transition: all 0.3s ease;
+          &.on {
+            opacity: 1;
+          }
+        }
+        &-question {
+          opacity: 0;
+          font-size: 16px;
+          color: rgb(49, 130, 246);
+          line-height: 20px;
+          margin: 24px 0 16px 0;
+          &.on {
+            opacity: 1;
+          }
+        }
+        &-close {
+          opacity: 0;
+          transition: all 0.3s ease;
+          img {
+            width: 24px;
+            height: 24px;
+          }
+          &.on {
+            position: absolute;
+            bottom: 32px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

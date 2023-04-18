@@ -1,37 +1,50 @@
-
-div.teamPage-main-bg {
-  height: 100vh;
-  background: 
-    url("../../../public/images/teamPage-main.jpg")
-    no-repeat
-    center top 50%
-    / cover;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-
-  div.teampPage-main-contents {
+.teamPage {
+  &-main {
+    width: 100%;
+    height: 100vh;
+    background: url("../../../public/images/teamPage-main.jpg") no-repeat center
+      top 50% / cover;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-  }
-    div.teamPage-main-tit {
-      text-align: center;
-      position: absolute;
-      bottom: 20%;
-      span {
-        color: #fff;
-        font-size: 4.5rem;
-        font-weight: bold;
-        line-height: 1.3;
-        white-space: pre-wrap;
+
+    &-contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-tit {
+        text-align: center;
+        position: absolute;
+        bottom: 15%;
+        span {
+          color: #fff;
+          font-size: 4.5rem;
+          font-weight: bold;
+          line-height: 1.3;
+          white-space: pre-wrap;
+        }
       }
     }
-    svg.teamPage-main-arrow {
-      position: absolute;
-      bottom: 10%;
+
+    &-arrow {
+      > img {
+        position: absolute;
+        width: 28px;
+        animation: upDown 0.8s ease-in-out infinite alternate;
+      }
     }
+  }
+}
+@keyframes upDown {
+  from {
+    bottom: 10%;
+    opacity: 0;
+  }
+  to {
+    bottom: 11%;
+    opacity: 1;
+  }
 }
 
 div.teamPage-section-01 {

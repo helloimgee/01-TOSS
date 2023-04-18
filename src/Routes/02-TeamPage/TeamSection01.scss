@@ -1,0 +1,85 @@
+@import "../../style/variables.scss";
+
+.teamSection01 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #121417;
+  &-wrap {
+    max-width: calc(960px + 62px);
+    padding: 0 31px;
+    margin: 0 auto;
+    &-text {
+      &-title {
+        font-size: 38px;
+        font-weight: bold;
+        line-height: 52px;
+        color: #fff;
+        margin-bottom: 25px;
+        @include mobile {
+          font-size: 28px;
+          text-align: center;
+        }
+      }
+      &-list {
+        > li {
+          display: inline-flex;
+          flex-direction: column;
+          width: 400px;
+          margin-top: 51px;
+          p:nth-of-type(1) {
+            font-size: 21px;
+            line-height: 1.25;
+            color: #b0b8c1;
+            margin-bottom: 9px;
+          }
+          p:nth-of-type(2) {
+            font-size: 64px;
+            font-weight: bold;
+            line-height: 1.25;
+            color: #fff;
+          }
+        }
+        @include mobile {
+          > li {
+            display: flex;
+            flex-direction: column;
+            p:nth-of-type(1) {
+              font-size: 17px;
+            }
+            p:nth-of-type(2) {
+              font-size: 40px;
+            }
+          }
+        }
+      }
+      &-date {
+        font-size: 14px;
+        color: #6b7684;
+        margin-top: 36.26px;
+      }
+    }
+  }
+  &-graph {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    .chart-line {
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: dash 2s linear infinite forwards;
+    }
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dasharray: 0;
+  }
+}

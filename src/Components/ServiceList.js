@@ -1,10 +1,10 @@
 /* eslint-disable import/no-unresolved */
-import React from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 import serviceData from "../assets/serviceData";
 import "./ServiceList.scss";
 
-const ServiceList = React.forwardRef(({ className }, ref) => {
+const ServiceList = forwardRef(({ className }, ref) => {
   const serviceList = serviceData.map((list) => {
     return (
       <li className={`serviceList ${className}`} key={list.id}>

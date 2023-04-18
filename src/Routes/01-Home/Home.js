@@ -4,16 +4,14 @@ import React, { useEffect, useRef, useState } from "react";
 import InfiniteSlide from "../../components/InfiniteSlide";
 import ServiceList from "../../components/ServiceList";
 import "./Home.scss";
+import Section02 from "./Section02";
+import Section10 from "./Section10";
 // import ArrowIcon from "@components/Arrow";
 
 export default function Home() {
-  // 1. mount시 0.1초 뒤(Load값을 true일 경우) -> css 속성(클래스명) 변경
-  /* 1-1. Load 초기값 false로 설정하는 useState() 훅 */
+  // 1. mount시 0.1초 뒤(Load: true) -> 클래스명 변경
   const [Load, setLoad] = useState(false);
 
-  /* 1-2. 
-  (1) useEffet(setTimeout(), []) : 최초 mount시 setTimeout() 함수 실행
-  (2) setTimeout(setLoad(true), 1000) : 0.1초 뒤 Load값을 true로 변경하는 함수 실행 */
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
@@ -21,17 +19,15 @@ export default function Home() {
     return () => setLoad(false);
   }, []);
 
-  /* 2-1. 버튼 클릭시 도착할 요소를 지정 */
+  /* 2-1. 화살표 버튼 클릭 -> 스크롤로 이동 */
   const destinationRef = useRef(null);
-  /* 2-2. scroll 커스텀 메서드 생성 
-  = destinationRef 요소로 스크롤되는 함수(scrollIntoView())실행 */
-  const scroll = () => {
+
+  const arrowScroll = () => {
     destinationRef.current.scrollIntoView({
       behavior: "smooth",
       block: "start",
-      inline: "nearest",
     });
-  };
+  }; // scrollIntoView(): destinationRef.current 요소가 화면에 보이게 스크롤
 
   // 3. 특정 컴포넌트가 뷰포트 안에 들어오면 스크롤 이벤트 실행
   /* 3-1. 검사할 특정 컴포넌트를 참조 */
@@ -66,9 +62,7 @@ export default function Home() {
     setScrollPosition(window.pageYOffset || document.documentElement.scrollTop);
   };
 
-  /* 4-3. 브라우저창 scroll할 때마다 현재 스크롤 위치를 받아오기
-  (1) 초기 마운트시: 브라우저창을 scroll할 때 updateScroll 메서드 실행  
-  (2) 마운트 해제시: 브라우저창을 scroll해도 updateScroll 메서드 실행하지 않도록 이벤트 리스너 삭제 */
+  // 4-3. 브라우저창 scroll할 때마다 현재 스크롤 위치를 받아오기
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
     return () => {
@@ -97,13 +91,25 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <button type="button" className="home-main-op-arrow" onClick={scroll}>
+          <button
+            type="button"
+            className="home-main-op-arrow"
+            onClick={arrowScroll}
+          >
             <img src="/images/icn-arrow.svg" alt="화살표" />
           </button>
         </div>
       </main>
+      <section className="home-section01" ref={destinationRef}>
+        <p>
+          내 모든 금융 내역을 한눈에 조회하고 한 곳에서 관리하세요. <br />
+          이제껏 경험 못 했던 쉽고 편리한 금융 서비스,
+          <br /> 토스와 함께라면 당신의 일상이 새로워질 거예요.
+        </p>
+      </section>
+      <Section02 />
       {/* section-01 */}
-      <section className="home section-01" ref={destinationRef}>
+      <section className="home section-01">
         <div className="home section-01-wrap">
           <div className="home section-01-wrap-margin">
             <div
@@ -166,6 +172,7 @@ export default function Home() {
             }}
           />
         </div>
+        <Section10 />
       </section>
     </div>
   );

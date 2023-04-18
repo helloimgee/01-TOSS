@@ -68,13 +68,12 @@ export default function HeaderLight() {
         </div>
         {/* 모바일 */}
         <div className="header-menu-mobile">
-          <button type="button" className="appBtn">
+          <button className="header-menu-mobile-appDown" type="button">
             앱 다운로드
           </button>
-          {/* 햄버거 */}
           <button
-            type="button"
             className="hamburger"
+            type="button"
             onClick={() => {
               setIsClicked((e) => !e);
             }}

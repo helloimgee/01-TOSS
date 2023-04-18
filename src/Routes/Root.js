@@ -1,23 +1,17 @@
 /* eslint-disable import/no-unresolved */
 import React from "react";
-import { Outlet, useResolvedPath } from "react-router-dom";
-import HeaderLight from "../components/HeaderLight";
-import HeaderDark from "../components/HeaderDark";
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./Root.scss";
+import { useTheme } from "../context/ThemeProvider";
 
 export default function Root() {
-  const { pathname } = useResolvedPath();
+  const { isDarkMode } = useTheme();
 
   return (
     <>
-      {pathname === "/" ||
-      pathname === "/support" ||
-      pathname === "/support/faq" ? (
-        <HeaderLight />
-      ) : (
-        <HeaderDark />
-      )}
+      <Header mode={isDarkMode ? "darkMode" : "lightMode"} />
       <Outlet />
       <Footer />
     </>
