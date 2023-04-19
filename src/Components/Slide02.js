@@ -74,7 +74,10 @@ export default function Slide03() {
           role="button"
           aria-hidden
         >
-          <img src="/images/slide01-arrow.png" alt="왼쪽 화살표" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/slide01-arrow.png`}
+            alt="왼쪽화살표"
+          />
         </div>
         <div
           className={`nextBtn slideBtn ${
@@ -84,7 +87,10 @@ export default function Slide03() {
           role="button"
           aria-hidden
         >
-          <img src="/images/slide01-arrow.png" alt="오른쪽 화살표" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/slide01-arrow.png`}
+            alt="오른쪽화살표"
+          />
         </div>
       </div>
     </div>

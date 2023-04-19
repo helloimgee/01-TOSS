@@ -36,7 +36,10 @@ export default function headerDark() {
       <div className="header-wrap">
         <div className="header-logo">
           <Link to="/">
-            <img src="/images/logo-white.svg" alt="logo2" />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/logo-white.svg`}
+              alt="logo2"
+            />
           </Link>
         </div>
         {/* pc */}
@@ -82,14 +85,14 @@ export default function headerDark() {
             {isClicked ? (
               <img
                 className="hamburger-before"
-                src="/images/hamburger-white.svg"
+                src={`${process.env.PUBLIC_URL}/images/hamburger-white.svg`}
                 alt="before"
               />
             ) : (
               <>
                 <img
                   className="hamburger-after"
-                  src="/images/hamburger-x.svg"
+                  src={`${process.env.PUBLIC_URL}/images/hamburger-x.svg`}
                   alt="after"
                 />
                 <div className="hamburger-menu">

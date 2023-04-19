@@ -57,7 +57,10 @@ export default function Slide01() {
         role="button"
         aria-hidden
       >
-        <img src="/images/slide01-arrow.png" alt="왼쪽 화살표" />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/slide01-arrow.png`}
+          alt="왼쪽 화살표"
+        />
       </div>
       {/* (1) next 버튼 다 눌렀을 때 next 버튼 비활성화 
       (2) 클릭시 toNext 메서드 실행 */}
@@ -67,7 +70,10 @@ export default function Slide01() {
         role="button"
         aria-hidden
       >
-        <img src="/images/slide01-arrow.png" alt="오른쪽 화살표" />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/slide01-arrow.png`}
+          alt="오른쪽 화살표"
+        />
       </div>
     </div>
   );

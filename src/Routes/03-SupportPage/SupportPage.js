@@ -28,7 +28,10 @@ export default function SupportPage() {
             <span>보통</span>
           </div>
           <div className="support-main-cont-img">
-            <img src="/images/supportPage-main.png" alt="cscenter" />
+            <img
+              src={`${process.env.PUBLIC_URL}/images/supportPage-main.png`}
+              alt="cscenter"
+            />
           </div>
         </div>
       </div>

@@ -13,44 +13,49 @@ import ErrorPage from "./ErrorPage";
 import "./reset.scss";
 import ThemeProvider from "./context/ThemeProvider";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          index: true, // *처음 “/” 경로(index)일 때는 <Outlet>(children) 부분이 비어있기 때문에 그 부분에 띄워줄 컴포넌트를 지정해준다
+          element: <Home />,
+        },
+        {
+          path: "/team",
+          element: <TeamPage />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/support",
+          element: <SupportPage />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/support/faq",
+          element: <SupportFaqPage />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/tosscert",
+          element: <TossCertPage />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/career",
+          element: <CareerPage />,
+          errorElement: <ErrorPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "/team",
-        element: <TeamPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/support",
-        element: <SupportPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/support/faq",
-        element: <SupportFaqPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/tosscert",
-        element: <TossCertPage />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/career",
-        element: <CareerPage />,
-        errorElement: <ErrorPage />,
-      },
-    ],
-  },
-]);
+    basename: process.env.PUBLIC_URL,
+  }
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
