@@ -2,9 +2,12 @@ import React from "react";
 import "./Search.scss";
 
 export default function Search() {
+  const handleSearch = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="search">
-      <form className="search-form">
+      <form className="search-form" onSubmit={handleSearch}>
         <span className="search-form-img">
           <img
             src={`${process.env.PUBLIC_URL}/images/search.svg`}

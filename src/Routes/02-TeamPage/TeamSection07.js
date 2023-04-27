@@ -8,7 +8,7 @@ export default function TeamSection07() {
 
   const [cate, setCate] = useState("2022");
   const [data, setData] = useState([]);
-  // const [opacity, setOpacity] = useState(0);
+
   const [menuOffset, setMenuOffset] = useState(0);
 
   const handleCate = (e, idx) => {

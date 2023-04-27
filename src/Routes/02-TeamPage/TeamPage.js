@@ -7,23 +7,10 @@ import TeamSection05 from "./TeamSection05";
 import TeamSection07 from "./TeamSection07";
 
 export default function TeamPage() {
-  const destinationRef = useRef(null);
-
-  // const [scrollOffset, setScrollOffest] = useState(0);
-
-  // const updateScroll = () => {
-  //   setScrollOffest(window.scrollY || document.documentElement.scrollTop);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", updateScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", updateScroll);
-  //   };
-  // });
+  const ref = useRef(null);
 
   const arrowScroll = () => {
-    destinationRef.current.scrollIntoView({
+    ref.current.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -49,7 +36,7 @@ export default function TeamPage() {
           </button>
         </div>
       </main>
-      <TeamSection01 ref={destinationRef} />
+      <TeamSection01 ref={ref} />
       <TeamSection02 />
       <TeamSection03 />
       <TeamSection05 />

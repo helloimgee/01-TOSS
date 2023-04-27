@@ -1,0 +1,55 @@
+@import "../../style/variables";
+
+.supportSection04 {
+  width: 100%;
+  background-color: #eef6f3;
+  overflow: hidden;
+
+  &-wrap {
+    position: relative;
+    max-width: 690px;
+    padding: 54px 24px;
+    margin: 0 auto;
+    p:nth-of-type(1) {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: rgba(0, 12, 30, 0.8);
+      margin-bottom: 8px;
+    }
+    p:nth-of-type(2) {
+      font-size: 1.9rem;
+      line-height: 1.5;
+      color: rgba(0, 19, 43, 0.58);
+    }
+
+    &-img {
+      position: absolute;
+      top: -20px;
+      right: -50px;
+      width: 326px;
+    }
+  }
+
+  @include mobile {
+    height: 432px;
+    .supportSection04-wrap {
+      height: 100%;
+      padding: 72px 24px;
+
+      p:nth-of-type(1) {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
+      &-img {
+        top: auto;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+      }
+    }
+  }
+}

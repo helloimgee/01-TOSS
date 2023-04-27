@@ -1,0 +1,98 @@
+@import "../../style/variables";
+
+.supportSection01 {
+  &-wrap {
+    max-width: 690px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    &-tit {
+      margin-bottom: 32px;
+      > span {
+        display: block;
+        font-size: 3.6rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      > p {
+        font-size: 1.8rem;
+        color: #4e5968;
+        line-height: 1.5;
+      }
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 100px 100px;
+      grid-template-areas:
+        "item01 item01 item01 item01"
+        "item02 item03 item04 item05";
+      grid-column-gap: 10px;
+      grid-gap: 10px;
+      &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        background-color: rgba(2, 32, 71, 0.05);
+        border-radius: 8px;
+        > img {
+          width: 28px;
+          height: 28px;
+          object-fit: cover;
+          margin-bottom: 5px;
+        }
+        &.item01 {
+          grid-area: item01;
+        }
+        &.item02 {
+          grid-area: item02;
+        }
+        &.item03 {
+          grid-area: item03;
+        }
+        &.item04 {
+          grid-area: item04;
+        }
+        &.item05 {
+          grid-area: item05;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .supportSection01-wrap {
+      &-tit {
+        > span {
+        }
+        > p {
+        }
+      }
+
+      &-list {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 74px);
+        grid-template-areas:
+          "item01"
+          "item02"
+          "item03"
+          "item04"
+          "item05";
+        grid-gap: 16px;
+        &-item {
+          flex-direction: row;
+          justify-content: flex-start;
+          padding: 0 30px;
+          font-size: 1.6rem;
+          font-weight: 600;
+          > img {
+            width: 24px;
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+  }
+}

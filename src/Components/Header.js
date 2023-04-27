@@ -50,7 +50,7 @@ export default function Header({ mode }) {
       } ${isClicked === false ? "hamburgerBg" : ""}`}
     >
       <div className="header-wrap">
-        <Link className="header-wrap-logo" to="/" />
+        <Link className={`header-wrap-logo ${isClicked ? "off" : ""}`} to="/" />
         {/* pc */}
         <div className="header-wrap-pc">
           <Link to="/team">
@@ -84,7 +84,7 @@ export default function Header({ mode }) {
             <button className="header-wrap-mobile-btns-appDown" type="button">
               앱 다운로드
             </button>
-            {/* 햄버거 */}
+            {/* 햄버거 메뉴 */}
             <button
               className="header-wrap-mobile-btns-hamburger"
               type="button"
@@ -98,7 +98,7 @@ export default function Header({ mode }) {
                 <>
                   <img
                     className="hamburger-after"
-                    src="/images/hamburger-x.svg"
+                    src={`${process.env.PUBLIC_URL}/images/hamburger-x.svg`}
                     alt="after"
                   />
                   <div className="hamburger-menu">

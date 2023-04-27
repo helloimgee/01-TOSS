@@ -119,8 +119,8 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: currentColor;
   text-decoration: none;
+  color: currentColor;
 }
 blockquote,
 q {
@@ -147,14 +147,16 @@ button {
   border: none;
   cursor: pointer;
 }
+input {
+  &:focus {
+    outline: none;
+  }
+}
 
-html {
-  font-size: 1rem;
-  letter-spacing: -0.1rem;
-  @include tablet {
-    font-size: 10px;
-  }
-  @include mobile {
-    font-size: 8px;
-  }
+html,
+body {
+  font-size: 62.5%;
+  letter-spacing: 0;
+  min-width: 475px;
+  overflow-x: hidden;
 }

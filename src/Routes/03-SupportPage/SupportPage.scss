@@ -1,109 +1,105 @@
 @import "../../style/variables";
 
-div.support {
-  width: 100vw;
-  background-color: #eef6f3;
-}
-
-div.support-main {
-  width: 92%;
-  max-width: calc(100% - 48px);
-  min-height: 920px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include mobile {
-    min-height: 556px;
-  }
-
-  div.support-main-cont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    p.supprot-main-cont-tit {
-      font-size: 56px;
-      margin-top: 136px;
-      margin-bottom: 40px;
-      color: #333d4b;
-      font-weight: bold;
-      line-height: 130%;
-      text-align: center;
-      @include mobile { 
-        font-size: 32px;
-        margin-bottom : 32px;
-      }
-    }
-
-    div.support-main-cont-phon {
+.support {
+  &-main {
+    width: 100%;
+    background-color: #eef6f3;
+    &-cont {
       display: flex;
-      gap: 0 50px;
-      margin-bottom: 35px;
-      height: 64.5px;
-    
+      flex-direction: column;
+      align-items: center;
+      max-width: calc(100% - 48px);
+      min-height: 920px;
+      margin: 0 auto;
       @include mobile {
-        display: none;
+        min-height: 556px;
       }
 
-      &.phon01, &.phon02 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        margin-bottom: 0px;
+      &-tit {
+        font-size: 56px;
+        margin-top: 136px;
+        margin-bottom: 40px;
+        color: #333d4b;
+        font-weight: bold;
+        line-height: 130%;
         text-align: center;
-        color: #333d4bB3;
+        @include mobile {
+          font-size: 32px;
+          margin-bottom: 32px;
+        }
+      }
+
+      &-phon {
+        display: flex;
+        gap: 0 50px;
+        margin-bottom: 35px;
+        height: 64.5px;
+
+        @include mobile {
+          display: none;
+        }
+
+        &.phon01,
+        &.phon02 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          margin-bottom: 0px;
+          text-align: center;
+          color: #333d4bb3;
+
+          span:nth-child(1) {
+            font-size: 17px;
+            margin-bottom: 10px;
+          }
+          span:nth-child(2) {
+            font-size: 26px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      &-state {
+        width: 190px;
+        height: 48px;
+        background-color: rgba(54, 103, 168, 0.06);
+        border-radius: 54px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        line-height: 150%;
+        color: rgba(3, 18, 40, 0.7);
 
         span:nth-child(1) {
-          font-size: 17px;
-          margin-bottom: 10px;
+          margin-right: 6px;
         }
         span:nth-child(2) {
-          font-size: 26px;
-          font-weight: 700;
+          width: 8px;
+          height: 8px;
+          background-color: rgb(9, 117, 117);
+          border-radius: 50%;
+          margin-right: 4px;
+          animation: fadeInOut 0.7s ease-in-out 0s infinite alternate;
+        }
+        span:nth-child(3) {
+          color: rgb(9, 117, 117);
+        }
+      }
+
+      &-img {
+        max-width: 652px;
+        margin: 0 auto;
+
+        img {
+          width: 100%;
         }
       }
     }
-
-    div.support-main-cont-state {
-      width: 190px;
-      height: 48px;
-      background-color: rgba(54, 103, 168, 0.06);
-      border-radius: 54px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      line-height: 150%;
-      color: rgba(3, 18, 40, 0.7);
-
-      span:nth-child(1) {
-        margin-right: 6px;
-      }
-      span:nth-child(2) {
-        width: 8px;
-        height: 8px;
-        background-color: rgb(9, 117, 117);
-        border-radius: 50%;
-        margin-right: 4px;
-        animation: fadeInOut 0.7s ease-in-out 0s infinite alternate;
-      }
-      span:nth-child(3) {
-        color: rgb(9, 117, 117);
-      }
-    }
-
-    div.support-main-cont-img {
-      max-width: 652px;
-      margin: 0 auto;
-  
-      img {
-        width: 100%;
-      }
-    }
-  }  
+  }
 }
+
 @keyframes fadeInOut {
   from {
     opacity: 0;

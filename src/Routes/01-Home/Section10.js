@@ -1,18 +1,31 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import useVisible from "../../customhook/useVisible";
 import "./Section10.scss";
 
 export default function Section10() {
+  const imgRef = useRef(null);
+  const titRef = useRef(null);
+  const subRef = useRef(null);
+
+  const imgVisible = useVisible(imgRef);
+  const titVisible = useVisible(titRef);
+  const subVisible = useVisible(subRef);
+
   return (
     <section className="section10">
       <img
-        className="section10-img"
+        className={`section10-img ${imgVisible ? "on" : ""}`}
         src={`${process.env.PUBLIC_URL}/images/home/section10_01.jpeg`}
         alt="태블릿이미지"
+        ref={imgRef}
       />
       <div className="section10-inner">
-        <div className="section10-inner-tit">
+        <div
+          className={`section10-inner-tit ${titVisible ? "on" : ""}`}
+          ref={titRef}
+        >
           <p>사업도 토스와 함께</p>
           <p>
             사업을 시작하셨나요? <br />
@@ -20,7 +33,10 @@ export default function Section10() {
             이제 토스와 함께 하세요.
           </p>
         </div>
-        <div className="section10-inner-sub">
+        <div
+          className={`section10-inner-sub ${subVisible ? "on" : ""}`}
+          ref={subRef}
+        >
           <div className="section10-inner-sub-box">
             <p>토스결제</p>
             <p>

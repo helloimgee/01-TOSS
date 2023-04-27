@@ -1,21 +1,26 @@
 @import "../../../style/variables";
 
 .searchHeader {
-  width: 200px;
-  margin-right: 60px;
-  font-weight: 600;
-  font-size: 20px;
-  li:nth-child(1) {
-    span {
-      color: $blue;
-    }
-  }
   li {
+    width: 200px;
+    margin-right: 60px;
     padding: 12px 16px;
     margin-bottom: 10px;
-    line-height: 150%;
-    span {
+    border-radius: 8px;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+      line-height: 1.5;
+      font-weight: 600;
       color: #8b95a1;
+      &.on {
+        color: $blue;
+      }
+    }
+    &:hover {
+      background-color: rgba(2, 32, 71, 0.05);
     }
   }
 }

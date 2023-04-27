@@ -1,0 +1,14 @@
+@import "../../style/variables";
+
+.section09 {
+  background-color: #f9fafb;
+
+  &-wrap {
+    max-width: 1140px;
+    padding: 250px 45px;
+    margin: 0 auto;
+    @include mobile {
+      padding: 100px 24px;
+    }
+  }
+}

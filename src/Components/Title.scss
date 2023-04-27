@@ -1,0 +1,36 @@
+@import "../style/variables";
+
+.title {
+  margin-bottom: 100px;
+  transition: all 0.85s;
+  transform: translate(0, 30%);
+  opacity: 0;
+  &.on {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  > span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #3182f6;
+  }
+  > p {
+    font-size: 50px;
+    font-weight: 700;
+    color: #191f28;
+    line-height: 1.4;
+  }
+
+  @include mobile {
+    margin-bottom: 50px;
+    > span {
+      font-size: 18px;
+    }
+    > p {
+      font-size: 28px;
+    }
+  }
+}

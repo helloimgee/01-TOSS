@@ -1,67 +1,69 @@
 @import "../../style/variables.scss";
 
 .teamSection02 {
-  &-wrap {
-    position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200vh;
+  background-color: #121417;
+
+  &-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
+    background: url("../../../public/images/team/team-scroll.jpeg") no-repeat
+      center / cover;
+  }
 
-    &-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url("../../../public/images/team/team-scroll.jpeg") no-repeat
-        center / cover;
+  &-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(18, 20, 23);
+  }
+
+  &-txt {
+    position: absolute;
+    width: 788px;
+    height: 406px;
+    margin: 0 auto;
+    padding: 60px 92px;
+    border-radius: 16px;
+    background-color: rgba(26, 30, 36, 0.65);
+    backdrop-filter: blur(30px);
+    p:nth-of-type(1) {
+      font-size: 30px;
+      color: #b0b8c1;
+      text-align: center;
+      margin-bottom: 20px;
     }
-
-    &-filter {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: rgb(18, 20, 23);
-      opacity: 0.380879;
+    p:nth-of-type(2) {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 43.5px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: normal;
+      word-break: keep-all;
     }
-
-    &-txt {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      transform: translateY(-50%);
-      width: 788px;
-      margin: 0 auto;
-      padding: 60px 92px;
-      border-radius: 16px;
-      background-color: rgba(26, 30, 36, 0.65);
+    @include mobile {
+      width: calc(100vw - 60px);
+      height: auto;
+      padding: 36px 24px;
       p:nth-of-type(1) {
-        font-size: 30px;
-        color: #b0b8c1;
-        text-align: center;
-        margin-bottom: 20px;
+        font-size: 1.9rem;
+        margin-bottom: 10px;
       }
       p:nth-of-type(2) {
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 43.5px;
-        color: #fff;
-        text-align: center;
-      }
-      @include mobile {
-        width: calc(100vw - 60px);
-        padding: 36px 24px;
-        p:nth-of-type(1) {
-          font-size: 19px;
-          margin-bottom: 10px;
-        }
-        p:nth-of-type(2) {
-          font-size: 21px;
-          line-height: 30.45px;
-          br {
-            display: none;
-          }
+        font-size: 2.1rem;
+        line-height: 30.45px;
+        br {
+          display: none;
         }
       }
     }

@@ -1,0 +1,49 @@
+@import "../../style/variables";
+
+.tossCertSection04 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 120px 0;
+  p:nth-of-type(1) {
+    max-width: 485px;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: rgba(2, 9, 19, 0.91);
+    margin-bottom: 20px;
+    @include tablet {
+      font-size: 36px;
+    }
+    @include mobile {
+      font-size: 26px;
+    }
+  }
+  p:nth-of-type(2) {
+    max-width: 400px;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+    color: rgba(3, 18, 40, 0.7);
+    @include tablet {
+      font-size: 20px;
+    }
+    @include mobile {
+      font-size: 17px;
+    }
+  }
+  button {
+    padding: 18px 28px;
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: #3182f6;
+    font-size: 17px;
+    color: #fff;
+    line-height: 1.2em;
+    border-radius: 8px;
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}

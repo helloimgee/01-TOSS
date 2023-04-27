@@ -7,11 +7,11 @@ import Home from "./routes/01-Home/Home";
 import TeamPage from "./routes/02-TeamPage/TeamPage";
 import SupportPage from "./routes/03-SupportPage/SupportPage";
 import SupportFaqPage from "./routes/04-SupportFaqPage/SupportFaqPage";
-import TossCertPage from "./routes/05-TossCertPage/TossCertPage";
+import TossCertPageCopy from "./routes/05-TossCertPage/TossCertPageCopy";
 import CareerPage from "./routes/06-CareerPage/CareerPage";
 import ErrorPage from "./ErrorPage";
-import "./reset.scss";
 import ThemeProvider from "./context/ThemeProvider";
+import "./reset.scss";
 
 const router = createBrowserRouter(
   [
@@ -41,7 +41,7 @@ const router = createBrowserRouter(
         },
         {
           path: "/tosscert",
-          element: <TossCertPage />,
+          element: <TossCertPageCopy />,
           errorElement: <ErrorPage />,
         },
         {

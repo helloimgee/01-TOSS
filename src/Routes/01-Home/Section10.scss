@@ -1,3 +1,5 @@
+@import "../../style/variables";
+
 .section10 {
   width: 100%;
   height: 100%;
@@ -6,6 +8,13 @@
 
   &-img {
     width: 100%;
+    transition: all 1s;
+    transform: translateY(50px);
+    opacity: 0;
+    &.on {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   &-inner {
@@ -13,8 +22,11 @@
     padding: 0 24px;
     margin: 0 auto;
     &-tit {
+      transition: all 1s;
+      transform: translateY(50px);
+      opacity: 0;
       p:nth-of-type(1) {
-        font-size: 60px;
+        font-size: 6rem;
         font-weight: 700;
         color: #fff;
         text-align: center;
@@ -22,29 +34,36 @@
         margin-bottom: 21px;
       }
       p:nth-of-type(2) {
-        font-size: 30px;
+        font-size: 3rem;
         font-weight: 700;
         color: #b0b8c1;
         text-align: center;
         line-height: 1.4;
         margin-bottom: 200px;
       }
+      &.on {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
+
     &-sub {
       display: flex;
-      flex-wrap: wrap;
+      transition: all 1s;
+      transform: translateY(50px);
+      opacity: 0;
       &-box {
         max-width: 300px;
         margin: 0 80px 80px 0;
         p:nth-of-type(1) {
-          font-size: 30px;
+          font-size: 3rem;
           font-weight: 700;
           line-height: 1.3;
           color: #fff;
           margin-bottom: 12px;
         }
         p:nth-of-type(2) {
-          font-size: 20px;
+          font-size: 2rem;
           font-weight: 600;
           color: #b0b8c1;
           line-height: 1.5;
@@ -53,9 +72,48 @@
         a {
           padding: 11px 16px;
           background-color: #3182f6;
-          font-size: 15px;
+          font-size: 1.5rem;
           color: #f9fafb !important;
           border-radius: 7px;
+        }
+      }
+      &.on {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 100px 0 70px 0;
+
+    .section10 {
+      width: calc(100% - 16px);
+
+      &-img {
+      }
+      &-inner {
+        &-tit {
+          p:nth-of-type(1) {
+            font-size: 3.6rem;
+          }
+          p:nth-of-type(2) {
+            font-size: 1.8rem;
+            margin-bottom: 100px;
+          }
+        }
+        &-sub {
+          display: flex;
+          flex-direction: column;
+          &-box {
+            p:nth-of-type(1) {
+              font-size: 2.6rem;
+            }
+            p:nth-of-type(2) {
+              font-size: 1.8rem;
+              margin-bottom: 35px;
+            }
+          }
         }
       }
     }

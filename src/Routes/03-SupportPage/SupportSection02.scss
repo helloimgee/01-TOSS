@@ -1,0 +1,62 @@
+@import "../../style/variables";
+
+.supportSection02 {
+  width: 100%;
+  background-color: #f5f6f8;
+  &-wrap {
+    position: relative;
+    max-width: 690px;
+    padding: 56px 24px;
+    margin: 0 auto;
+
+    p:nth-of-type(1) {
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: rgba(0, 12, 30, 0.8);
+      margin-bottom: 8px;
+    }
+    p:nth-of-type(2) {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      color: rgba(0, 19, 43, 0.58);
+      margin-bottom: 24px;
+    }
+    > button {
+      padding: 11px 16px;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      background-color: rgba(107, 118, 132, 0.09);
+      border-radius: 8px;
+    }
+
+    &-img {
+      position: absolute;
+      right: -130px;
+      bottom: 0;
+      width: 520px;
+      height: 346px;
+    }
+  }
+}
+
+@include mobile {
+  .supportSection02-wrap {
+    padding: 70px 24px;
+
+    p:nth-of-type(1) {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    p:nth-of-type(2) {
+      font-size: 1.7rem;
+    }
+
+    &-img {
+      position: relative;
+      right: auto;
+      bottom: auto;
+    }
+  }
+}

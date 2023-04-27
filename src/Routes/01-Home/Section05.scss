@@ -1,0 +1,72 @@
+@import "../../style/variables";
+
+.section05 {
+  background-color: #f9fafb;
+  &-wrap {
+    max-width: 1140px;
+    padding: 250px 24px;
+    margin: 0 auto;
+    @include mobile {
+      padding: 100px 24px 70px;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      transition: all 1s;
+      transform: translateY(50px);
+      opacity: 0;
+      @include mobile {
+        .section05-wrap-list {
+          &-item {
+            flex-basis: 100%;
+            margin-bottom: 40px;
+            > img {
+              width: 80px;
+              margin-bottom: 20px;
+            }
+            > span {
+              font-size: 2.4rem;
+            }
+            > p {
+              font-size: 1.5rem;
+              .br01 {
+                display: none;
+              }
+              .br02 {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &-item {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        margin-bottom: 100px;
+        > img {
+          width: 120px;
+          margin-bottom: 30px;
+        }
+        > span {
+          font-size: 2.8rem;
+          font-weight: 700;
+          line-height: 1.5;
+          color: rgb(51, 61, 75);
+          margin-bottom: 10px;
+        }
+        > p {
+          font-size: 2.2rem;
+          font-weight: 600;
+          line-height: 1.5;
+          color: rgb(107, 118, 132);
+        }
+      }
+      &.on {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 /* 변수 */
-$blue : #3182f6;
-$h0: 4.5rem;// 72px
-$h1 : 4.13rem;
-$h2 : 3.5rem; // 56px
+$blue: #3182f6;
+$h0: 4.5rem; // 72px
+$h1: 4.13rem;
+$h2: 3.5rem; // 56px
 $h3: 3.13rem;
 $h4: 1.75rem;
 
@@ -12,20 +12,20 @@ $tablet: 1023px;
 $desktop: 1024px;
 
 /* 색상 */
-
+$hover: #1b64d9;
 
 @mixin mobile {
-  @media (max-width: 640px) {
+  @media screen and (max-width: 640px) {
     @content;
   }
 }
 @mixin tablet {
-  @media (min-width: 640px) and (max-width: 1023px) {
+  @media screen and (min-width: 640px) and (max-width: 1023px) {
     @content;
   }
 }
 @mixin desktop {
-  @media (min-width: 1024px) {
+  @media screen and (min-width: 1024px) {
     @content;
   }
 }

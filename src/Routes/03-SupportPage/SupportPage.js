@@ -1,13 +1,17 @@
 import React from "react";
+import SupportSection01 from "./SupportSection01";
 import DivisionLine from "../../components/DivisionLine";
+import SupportSection03 from "./SupportSection03";
+import SupportSection04 from "./SupportSection04";
 import "./SupportPage.scss";
+import SupportSection02 from "./SupportSection02";
 
 export default function SupportPage() {
   return (
     <div className="support">
       <div className="support-main">
         <div className="support-main-cont">
-          <p className="supprot-main-cont-tit" color="#333d4b">
+          <p className="support-main-cont-tit" color="#333d4b">
             토스 고객센터에서 <br />
             24시간 상담받을 수 있어요!
           </p>
@@ -35,6 +39,10 @@ export default function SupportPage() {
           </div>
         </div>
       </div>
+      <SupportSection01 />
+      <SupportSection02 />
+      <SupportSection03 />
+      <SupportSection04 />
     </div>
   );
 }
