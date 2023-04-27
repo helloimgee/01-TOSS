@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.css": "/01-TOSS/static/css/main.648255cc.css",
-    "main.js": "/01-TOSS/static/js/main.6e1cf189.js",
+    "main.css": "/01-TOSS/static/css/main.808485ae.css",
+    "main.js": "/01-TOSS/static/js/main.2c4296e0.js",
+    "static/media/team-scroll.jpeg": "/01-TOSS/static/media/team-scroll.4295db67191aeaf976bb.jpeg",
     "static/media/teamPage-main.jpg": "/01-TOSS/static/media/teamPage-main.63acd88c600a00bef914.jpg",
     "static/media/new_main.png": "/01-TOSS/static/media/new_main.60439d78c1291b749fc5.png",
+    "static/media/logo-white.svg": "/01-TOSS/static/media/logo-white.7138db0a9abedb3666f0.svg",
     "static/media/section03-mobile.png": "/01-TOSS/static/media/section03-mobile.e0bea1ba29c5c9b7146b.png",
+    "static/media/logo.png": "/01-TOSS/static/media/logo.bd70587480689a65242e.png",
     "static/media/section03-big.jpg": "/01-TOSS/static/media/section03-big.a319de1028d202b21832.jpg",
     "static/media/careerPage-main-mobile.jpeg": "/01-TOSS/static/media/careerPage-main-mobile.859eba8aee84ad71b997.jpeg",
     "static/media/careerPage-main.jpg": "/01-TOSS/static/media/careerPage-main.47092b10a7876602ab8c.jpg",
     "index.html": "/01-TOSS/index.html",
-    "main.648255cc.css.map": "/01-TOSS/static/css/main.648255cc.css.map",
-    "main.6e1cf189.js.map": "/01-TOSS/static/js/main.6e1cf189.js.map"
+    "static/media/hamburger-black.svg": "/01-TOSS/static/media/hamburger-black.345862fa2a29cebcb64c.svg",
+    "static/media/hamburger-white.svg": "/01-TOSS/static/media/hamburger-white.4444bb6e68d1a4cd06a9.svg",
+    "main.808485ae.css.map": "/01-TOSS/static/css/main.808485ae.css.map",
+    "main.2c4296e0.js.map": "/01-TOSS/static/js/main.2c4296e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.648255cc.css",
-    "static/js/main.6e1cf189.js"
+    "static/css/main.808485ae.css",
+    "static/js/main.2c4296e0.js"
   ]
 }
