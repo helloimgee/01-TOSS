@@ -62,8 +62,11 @@
     &-list {
       > ul {
         position: relative;
-        top: 0px;
+        opacity: 0;
         transition: all 0.3s ease-in-out;
+        &.on {
+          opacity: 1;
+        }
         li {
           position: relative;
           padding: 44px 0;

@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import pressData from "../../assets/pressData";
 import "./TeamSection07.scss";
 
 export default function TeamSection07() {
-  const listRef = useRef(null);
-
   const [cate, setCate] = useState("2022");
   const [data, setData] = useState([]);
+  const [isLoad, setIsLoad] = useState(false);
 
   const [menuOffset, setMenuOffset] = useState(0);
 
@@ -17,16 +16,10 @@ export default function TeamSection07() {
   };
 
   useEffect(() => {
-    listRef.current.style.top = "0px";
-    listRef.current.style.opacity = "0";
     setData(pressData[cate]);
-    const timeoutFunc = setTimeout(() => {
-      listRef.current.style.top = "10px";
-      listRef.current.style.opacity = "1";
-      // setOpacity(1);
-    }, 300);
+    setIsLoad(true);
     return () => {
-      clearTimeout(timeoutFunc);
+      setIsLoad(false);
     };
   }, [cate]);
 
@@ -85,7 +78,7 @@ export default function TeamSection07() {
           </ul>
         </div>
         <div className="teamSection07-wrap-list">
-          <ul ref={listRef}>
+          <ul className={`${isLoad && "on"}`}>
             {data.map((item) => {
               return (
                 <li key={item.key}>

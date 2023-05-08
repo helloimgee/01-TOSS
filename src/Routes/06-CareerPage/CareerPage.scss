@@ -35,7 +35,7 @@
 
     p.careerPage-main-tit {
       position: fixed;
-      top: 22vh;
+      top: 26vh;
       left: 0;
       z-index: 1;
       width: 100%;
@@ -47,6 +47,7 @@
       color: #fff;
       text-align: center;
       transition: all 1s;
+      opacity: 0;
 
       @include mobile {
         font-size: 32px;

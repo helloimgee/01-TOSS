@@ -23,6 +23,9 @@ export default function CareerPage() {
   };
 
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoad(true);
+    }, 1000);
     window.addEventListener("scroll", updateScroll);
     return () => {
       window.removeEventListener("scroll", updateScroll);
@@ -53,7 +56,7 @@ export default function CareerPage() {
           className="careerPage-main-bg"
           style={{
             transform: `scale(${
-              scrollTop < 1500 ? 1 + scrollTop * 0.0003866667 : 1.58
+              1 + scrollTop * 0.0003866667
               /* 
               ~1500: 1 ~ 1.58 -> 0.58 / 1500 
               1500~: 1.58
