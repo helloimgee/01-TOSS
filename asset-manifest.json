@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/01-TOSS/static/css/main.88919a58.css",
+    "main.css": "/01-TOSS/static/css/main.4d272acb.css",
     "main.js": "/01-TOSS/static/js/main.b3d04c8d.js",
     "static/media/team-scroll.jpeg": "/01-TOSS/static/media/team-scroll.4295db67191aeaf976bb.jpeg",
     "static/media/teamPage-main.jpg": "/01-TOSS/static/media/teamPage-main.63acd88c600a00bef914.jpg",
@@ -14,11 +14,11 @@
     "index.html": "/01-TOSS/index.html",
     "static/media/hamburger-black.svg": "/01-TOSS/static/media/hamburger-black.345862fa2a29cebcb64c.svg",
     "static/media/hamburger-white.svg": "/01-TOSS/static/media/hamburger-white.4444bb6e68d1a4cd06a9.svg",
-    "main.88919a58.css.map": "/01-TOSS/static/css/main.88919a58.css.map",
+    "main.4d272acb.css.map": "/01-TOSS/static/css/main.4d272acb.css.map",
     "main.b3d04c8d.js.map": "/01-TOSS/static/js/main.b3d04c8d.js.map"
   },
   "entrypoints": [
-    "static/css/main.88919a58.css",
+    "static/css/main.4d272acb.css",
     "static/js/main.b3d04c8d.js"
   ]
 }
