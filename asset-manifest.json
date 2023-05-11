@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/01-TOSS/static/css/main.c6ff0492.css",
-    "main.js": "/01-TOSS/static/js/main.f33ec29b.js",
+    "main.css": "/01-TOSS/static/css/main.7bfe31bd.css",
+    "main.js": "/01-TOSS/static/js/main.72185dd8.js",
     "static/media/team-scroll.jpeg": "/01-TOSS/static/media/team-scroll.4295db67191aeaf976bb.jpeg",
     "static/media/teamPage-main.jpg": "/01-TOSS/static/media/teamPage-main.63acd88c600a00bef914.jpg",
     "static/media/new_main.png": "/01-TOSS/static/media/new_main.60439d78c1291b749fc5.png",
@@ -14,11 +14,11 @@
     "index.html": "/01-TOSS/index.html",
     "static/media/hamburger-black.svg": "/01-TOSS/static/media/hamburger-black.345862fa2a29cebcb64c.svg",
     "static/media/hamburger-white.svg": "/01-TOSS/static/media/hamburger-white.4444bb6e68d1a4cd06a9.svg",
-    "main.c6ff0492.css.map": "/01-TOSS/static/css/main.c6ff0492.css.map",
-    "main.f33ec29b.js.map": "/01-TOSS/static/js/main.f33ec29b.js.map"
+    "main.7bfe31bd.css.map": "/01-TOSS/static/css/main.7bfe31bd.css.map",
+    "main.72185dd8.js.map": "/01-TOSS/static/js/main.72185dd8.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6ff0492.css",
-    "static/js/main.f33ec29b.js"
+    "static/css/main.7bfe31bd.css",
+    "static/js/main.72185dd8.js"
   ]
 }
